@@ -21,15 +21,15 @@
 图4 选择本地保存目录
  
 图5 导入现有项目
-1.2.1 Eclipse配置
+### 1.2.1 Eclipse配置
 代码导入后会出现报错，不要着急，这是因为java和maven等没有进行配置造成的。
-JDK配置
+* JDK配置
 在Window->preferences中设置installed JRES，添加jdk（java8及以上版本），同时设置编译级别为1.8。关于JDK的安装与环境变量配置请自行百度。
  
 图6 
  
 图7 设置编译级别为1.8
-Maven配置
+* Maven配置
 在Maven的User Settings中，选择maven的配置文件，关于如何安装和配置maven可以自行百度。
  
 图8 设置Maven
@@ -39,11 +39,11 @@ Maven配置
 如果此时还有报错，则设置项目的编译路径，在项目上右键->Build Path->Configure Build Path，右侧Libraries中选择安装的jdk。
  
 图10 项目build路径
-1.2.2 案例配置
+### 1.2.2 案例配置
 在该调度平台中已经事先生成好了单机调度标准案例，将“instance”文件夹复制到用户目录下（注意放在别的路径是无效的），如C:\Users\hba下，需要根据自己的系统和用户目录确定。
-1.3 程序运行
+## 1.3 程序运行
 在instanceScheduler项目下的src/test/java中，给出了启发式调度运行的测试程序，直接右键Run As->Java Application即可。
-1.3.1 结果可视化
+### 1.3.1 结果可视化
 结果可视化主要用于展示调度结果和算法学习过程，用于不同算法间性能的对比，目前只发布了甘特图的动态展示页面。
  
 图13 启动Server
