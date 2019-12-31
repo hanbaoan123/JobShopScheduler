@@ -6,7 +6,7 @@
 
 &emsp;&emsp;本手册将给出完整的关于调度平台的使用说明。
 
-&emsp;&emsp;==注：本调度平台所使用到的所有安装程序和文件均可在[这里]()找到，密码为。==
+&emsp;&emsp;<font color="#dd0000">注：本调度平台所使用到的所有安装程序和文件均可在[这里]()找到，密码为。</font><br />
 1.2 安装
 打开Eclipse，依次选择File->Import->Git->Projects from Git->Clone URI，Next之后填写Github远程仓库地址：https://github.com/hanbaoan123/JobShopScheduler.git，然后选择保存的目录即可。
  
