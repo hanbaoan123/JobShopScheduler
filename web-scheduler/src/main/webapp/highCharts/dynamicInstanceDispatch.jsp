@@ -500,7 +500,7 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>";
 										},
 
 										title : {
-											text : '深度强化学习分派动画'
+											text : '动态甘特图'
 										},
 
 										subtitle : {
@@ -632,7 +632,7 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>";
 			});
 		}
 		function loadGanttTask(filePath) {
-			var currObjective=document.getElementById("currObjective");
+			var currObjective=document.getElementById("currObjectiveInput");
 			currObjective.value=0;
 			//初始化机床
 			getInstanceRes(filePath);
@@ -752,7 +752,7 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>";
 				<input type="button" value="刷新" onClick="flush()" />
 		</div>
 		<span>当前目标值：</span>
-			<input id='currCmaxInput' value='0' style = "width:100" disabled="disabled"></input>
+			<input id='currObjectiveInput' value='0' style = "width:100" disabled="disabled"></input>
 		<div id="container"
 			style="width: 100%; height: 100%; margin: 0 auto; padding: 0"></div>
 		<div style=''></div>
