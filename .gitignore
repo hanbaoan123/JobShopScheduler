@@ -1,1 +1,5 @@
 /.settings
+/instance-scheduler/.classpath
+/web-scheduler/.classpath
+/web-scheduler/.settings
+/instance-scheduler/.settings
