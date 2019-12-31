@@ -10,7 +10,7 @@
 
 ## 1.2 安装
 
-&emsp;&emsp;打开Eclipse，依次选择File->Import->Git->Projects from Git->Clone URI，Next之后填写Github远程仓库地址：https://github.com/hanbaoan123/JobShopScheduler.git，然后选择保存的目录即可。
+&emsp;&emsp;打开Eclipse，依次选择File->Import->Git->Projects from Git->Clone URI，Next之后填写Github远程仓库地址：[https://github.com/hanbaoan123/JobShopScheduler.git](https://github.com/hanbaoan123/JobShopScheduler.git)，
  
 图1 从Git导入项目
  
