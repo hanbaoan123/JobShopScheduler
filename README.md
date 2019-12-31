@@ -5,6 +5,7 @@
 &emsp;&emsp;JobShhopScheduler共包含两个Maven项目：instance-scheduler和web-scheduler。instance-scheduler是实现调度功能的核心项目，通过该项目可以使用不同的算法得到工序在何时由什么机床进行加工。web-scheduler是一个maven web项目，用于展示一些调度结果和算法学习过程。
 
 &emsp;&emsp;本手册将给出完整的关于调度平台的使用说明。
+
 &emsp;&emsp;==注：本调度平台所使用到的所有安装程序和文件均可在[这里]()找到，密码为。==
 1.2 安装
 打开Eclipse，依次选择File->Import->Git->Projects from Git->Clone URI，Next之后填写Github远程仓库地址：https://github.com/hanbaoan123/JobShopScheduler.git，然后选择保存的目录即可。
