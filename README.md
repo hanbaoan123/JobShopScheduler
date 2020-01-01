@@ -1,4 +1,4 @@
-![](https://github.com/hanbaoan123/image/raw/master/logo.png "111")
+![](https://github.com/hanbaoan123/image/raw/master/logo.png "")
 
 
 ## 1.1 说明
@@ -15,42 +15,48 @@
 
 &emsp;&emsp;打开Eclipse，依次选择File->Import->Git->Projects from Git->Clone URI，Next之后填写Github远程仓库地址：[https://github.com/hanbaoan123/JobShopScheduler.git](https://github.com/hanbaoan123/JobShopScheduler.git)，然后选择保存的目录即可。
  
+![](https://github.com/hanbaoan123/image/blob/master/1fromgit.jpg "")
 <center>图1 从Git导入项目</center>
- 
+![](https://github.com/hanbaoan123/image/blob/master/2cloneurl.jpg "")
 图2 克隆URI
- 
+![](https://github.com/hanbaoan123/image/blob/master/3gitrepos.jpg "") 
 图3 填写URI
- 
+![](https://github.com/hanbaoan123/image/blob/master/4%E4%BF%9D%E5%AD%98%E4%BD%8D%E7%BD%AE.jpg "") 
 图4 选择本地保存目录
- 
+![](https://github.com/hanbaoan123/image/blob/master/5%E5%AF%BC%E5%85%A5%E4%B8%BA%E4%B8%80%E8%88%AC%E9%A1%B9%E7%9B%AE.jpg "") 
 图5 导入现有项目
 ### 1.2.1 Eclipse配置
-代码导入后会出现报错，不要着急，这是因为java和maven等没有进行配置造成的。
+
+&emsp;&emsp;代码导入后会出现报错，不要着急，这是因为java和maven等没有进行配置造成的。
 * JDK配置
-在Window->preferences中设置installed JRES，添加jdk（java8及以上版本），同时设置编译级别为1.8。关于JDK的安装与环境变量配置请自行百度。
- 
-图6 
- 
+&emsp;&emsp;在Window->preferences中设置installed JRES，添加jdk（java8及以上版本），同时设置编译级别为1.8。关于JDK的安装与环境变量配置请自行百度。
+![](https://github.com/hanbaoan123/image/blob/master/6jdk.jpg "") 
+图6 安装JRE
+![](https://github.com/hanbaoan123/image/blob/master/7compiler1.8.jpg "")
 图7 设置编译级别为1.8
 * Maven配置
-在Maven的User Settings中，选择maven的配置文件，关于如何安装和配置maven可以自行百度。
- 
+&emsp;&emsp;在Maven的User Settings中，选择maven的配置文件，关于如何安装和配置maven可以自行百度。
+![](https://github.com/hanbaoan123/image/blob/master/8maven.jpg "")
 图8 设置Maven
-这时Eclipse会根据配置的maven自动的更新项目所需要的jar包，等待完成。
- 
+&emsp;&emsp;这时Eclipse会根据配置的maven自动的更新项目所需要的jar包，等待完成。
+![](https://github.com/hanbaoan123/image/blob/master/9%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0jar%E5%8C%85.jpg "")
 图9 自动更新jar包
-如果此时还有报错，则设置项目的编译路径，在项目上右键->Build Path->Configure Build Path，右侧Libraries中选择安装的jdk。
- 
+&emsp;&emsp;如果此时还有报错，则设置项目的编译路径，在项目上右键->Build Path->Configure Build Path，右侧Libraries中选择安装的jdk。
+![](https://github.com/hanbaoan123/image/blob/master/10%E9%A1%B9%E7%9B%AEjdk.jpg "")
 图10 项目build路径
 ### 1.2.2 案例配置
-在该调度平台中已经事先生成好了单机调度标准案例，将“instance”文件夹复制到用户目录下（注意放在别的路径是无效的），如C:\Users\hba下，需要根据自己的系统和用户目录确定。
+
+&emsp;&emsp;在该调度平台中已经事先生成好了单机调度标准案例，将“instance”文件夹复制到用户目录下（注意放在别的路径是无效的），如C:\Users\hba下，需要根据自己的系统和用户目录确定。
+
 ## 1.3 程序运行
-在instanceScheduler项目下的src/test/java中，给出了启发式调度运行的测试程序，直接右键Run As->Java Application即可。
+
+&emsp;&emsp;在instanceScheduler项目下的src/test/java中，给出了启发式调度运行的测试程序，直接右键Run As->Java Application即可。
 ### 1.3.1 结果可视化
-结果可视化主要用于展示调度结果和算法学习过程，用于不同算法间性能的对比，目前只发布了甘特图的动态展示页面。
- 
-图13 启动Server
- 
-图14 启动成功
- 
-图15 结果展示
+
+&emsp;&emsp;结果可视化主要用于展示调度结果和算法学习过程，用于不同算法间性能的对比，目前只发布了甘特图的动态展示页面。
+![](https://github.com/hanbaoan123/image/blob/master/15%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8.jpg "")
+图11 启动Server
+ ![](https://github.com/hanbaoan123/image/blob/master/14%E5%90%AF%E5%8A%A8%E6%88%90%E5%8A%9F.jpg "")
+图12 启动成功
+ ![](https://github.com/hanbaoan123/image/blob/master/16%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA.jpg "")
+图13 结果展示
