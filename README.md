@@ -30,6 +30,7 @@
 &emsp;&emsp;代码导入后会出现报错，不要着急，这是因为java和maven等没有进行配置造成的。
 
 * JDK配置
+
 &emsp;&emsp;在Window->preferences中设置installed JRES，添加jdk（java8及以上版本），同时设置编译级别为1.8。关于JDK的安装与环境变量配置请自行百度。
 
 <div align=center><img src="https://github.com/hanbaoan123/image/blob/master/6jdk.jpg"/><br/>图6 安装JRE</div>
@@ -37,6 +38,7 @@
 <div align=center><img src="https://github.com/hanbaoan123/image/blob/master/7compiler1.8.jpg"/><br/>图7 设置编译级别为1.8</div>
 
 * Maven配置
+
 &emsp;&emsp;在Maven的User Settings中，选择maven的配置文件，关于如何安装和配置maven可以自行百度。
 
 <div align=center><img src="https://github.com/hanbaoan123/image/blob/master/8maven.jpg"/><br/>图8 设置Maven</div>
