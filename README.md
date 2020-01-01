@@ -15,14 +15,23 @@
 &emsp;&emsp;打开Eclipse，依次选择File->Import->Git->Projects from Git->Clone URI，Next之后填写Github远程仓库地址：[https://github.com/hanbaoan123/JobShopScheduler.git](https://github.com/hanbaoan123/JobShopScheduler.git)，然后选择保存的目录即可。
  
 ![](https://github.com/hanbaoan123/image/blob/master/1fromgit.jpg "")
+
 <center>图1 从Git导入项目</center>
+
 ![](https://github.com/hanbaoan123/image/blob/master/2cloneurl.jpg "")
+
 图2 克隆URI
+
 ![](https://github.com/hanbaoan123/image/blob/master/3gitrepos.jpg "") 
+
 图3 填写URI
+
 ![](https://github.com/hanbaoan123/image/blob/master/4%E4%BF%9D%E5%AD%98%E4%BD%8D%E7%BD%AE.jpg "") 
+
 图4 选择本地保存目录
+
 ![](https://github.com/hanbaoan123/image/blob/master/5%E5%AF%BC%E5%85%A5%E4%B8%BA%E4%B8%80%E8%88%AC%E9%A1%B9%E7%9B%AE.jpg "") 
+
 图5 导入现有项目
 
 ### 1.2.1 Eclipse配置
