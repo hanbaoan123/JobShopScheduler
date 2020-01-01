@@ -1,7 +1,7 @@
 ![](https://github.com/hanbaoan123/image/raw/master/logo.png "")
 
 
-## 1.1 说明
+## 说明
 &emsp;&emsp;本调度平台旨在打造一个通用性更强的平台，在该平台上可以比较算法在标准调度案例上的性能。通用性体现在两个方面：算法实现和调度表达。算法通用性方面，平台支持各种不同的优化算法，包括启发式（简单规则）、元启发式（遗传算法，粒子群算法）和深度强化学习（这部分因为和课题相关，暂时也不发布），并且平台建立了完善的调度算法接口，可以实现各种想要实现的算法。问题通用性在于建立了通用的调度模型，可以表达单机调度问题，并行机调度问题，流水调度问题，作业车间调度问题和柔性作业车间调度问题，这些问题会在之后的版本发行中陆续给出。在当前v0.0.0版本只公开了使用启发式求解单机调度问题相关的代码。
 
 &emsp;&emsp;JobShhopScheduler共包含两个Maven项目：instance-scheduler和web-scheduler。instance-scheduler是实现调度功能的核心项目，通过该项目可以使用不同的算法得到工序在何时由什么机床进行加工。web-scheduler是一个maven web项目，用于展示一些调度结果和算法学习过程。
@@ -10,17 +10,17 @@
 
 &emsp;&emsp;**注：本调度平台所使用到的所有安装程序和文件均可在[这里](https://pan.baidu.com/s/1IFEVoFPbcUszYEfOZtpICw)找到，密码为1eub。**
 
-## 1.2 安装
+## 安装
 
 &emsp;&emsp;打开Eclipse，依次选择File->Import->Git->Projects from Git->Clone URI，Next之后填写Github远程仓库地址：[https://github.com/hanbaoan123/JobShopScheduler.git](https://github.com/hanbaoan123/JobShopScheduler.git)，然后选择保存的目录即可。
  
-<div align=center><img src="https://github.com/hanbaoan123/image/blob/master/1fromgit.jpg"/></div>
+<div align=center><img src="https://github.com/hanbaoan123/image/blob/master/1fromgit.jpg"/>图1 从Git导入项目</div>
 
 <center>图1 从Git导入项目</center>
 
-![](https://github.com/hanbaoan123/image/blob/master/2cloneurl.jpg "")
+<div align=center><img src="https://github.com/hanbaoan123/image/blob/master/2cloneurl.jpg"/></div>
 
-图2 克隆URI
+<center>图2 克隆URI</center>
 
 ![](https://github.com/hanbaoan123/image/blob/master/3gitrepos.jpg "") 
 
@@ -34,7 +34,7 @@
 
 图5 导入现有项目
 
-### 1.2.1 Eclipse配置
+### Eclipse配置
 
 &emsp;&emsp;代码导入后会出现报错，不要着急，这是因为java和maven等没有进行配置造成的。
 
@@ -57,14 +57,14 @@
 ![](https://github.com/hanbaoan123/image/blob/master/10%E9%A1%B9%E7%9B%AEjdk.jpg "")
 图10 项目build路径
 
-### 1.2.2 案例配置
+### 案例配置
 
 &emsp;&emsp;在该调度平台中已经事先生成好了单机调度标准案例，将“instance”文件夹复制到用户目录下（注意放在别的路径是无效的），如C:\Users\hba下，需要根据自己的系统和用户目录确定。
 
-## 1.3 程序运行
+## 程序运行
 
 &emsp;&emsp;在instanceScheduler项目下的src/test/java中，给出了启发式调度运行的测试程序，直接右键Run As->Java Application即可。
-### 1.3.1 结果可视化
+### 结果可视化
 
 &emsp;&emsp;结果可视化主要用于展示调度结果和算法学习过程，用于不同算法间性能的对比，目前只发布了甘特图的动态展示页面。
 ![](https://github.com/hanbaoan123/image/blob/master/15%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8.jpg "")
