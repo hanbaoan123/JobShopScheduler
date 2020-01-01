@@ -16,23 +16,14 @@
  
 <div align=center><img src="https://github.com/hanbaoan123/image/blob/master/1fromgit.jpg"/><br/>图1 从Git导入项目</div>
 
-<center>图1 从Git导入项目</center>
+<div align=center><img src="https://github.com/hanbaoan123/image/blob/master/2cloneurl.jpg"/><br/>图2 克隆URI</div>
 
-<div align=center><img src="https://github.com/hanbaoan123/image/blob/master/2cloneurl.jpg"/></div>
+<div align=center><img src="https://github.com/hanbaoan123/image/blob/master/3gitrepos.jpg"/><br/>图3 填写URI</div>
 
-<center>图2 克隆URI</center>
+<div align=center><img src="https://github.com/hanbaoan123/image/blob/master/4%E4%BF%9D%E5%AD%98%E4%BD%8D%E7%BD%AE.jpg"/><br/>图4 选择本地保存目录</div>
 
-![](https://github.com/hanbaoan123/image/blob/master/3gitrepos.jpg "") 
+<div align=center><img src="https://github.com/hanbaoan123/image/blob/master/5%E5%AF%BC%E5%85%A5%E4%B8%BA%E4%B8%80%E8%88%AC%E9%A1%B9%E7%9B%AE.jpg"/><br/>图5 导入现有项目</div>
 
-图3 填写URI
-
-![](https://github.com/hanbaoan123/image/blob/master/4%E4%BF%9D%E5%AD%98%E4%BD%8D%E7%BD%AE.jpg "") 
-
-图4 选择本地保存目录
-
-![](https://github.com/hanbaoan123/image/blob/master/5%E5%AF%BC%E5%85%A5%E4%B8%BA%E4%B8%80%E8%88%AC%E9%A1%B9%E7%9B%AE.jpg "") 
-
-图5 导入现有项目
 
 ### Eclipse配置
 
