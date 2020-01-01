@@ -8,8 +8,7 @@
 
 &emsp;&emsp;本手册将给出完整的关于调度平台的使用说明。
 
-&emsp;&emsp;**注：本调度平台所使用到的所有安装程序和文件均可在[这里](https://pan.baidu.com/s/1IFEVoFPbcUszYEfOZtpICw)找到，密码为1eub
-。**
+&emsp;&emsp;**注：本调度平台所使用到的所有安装程序和文件均可在[这里](https://pan.baidu.com/s/1IFEVoFPbcUszYEfOZtpICw)找到，密码为1eub。**
 
 ## 1.2 安装
 
@@ -25,15 +24,19 @@
 图4 选择本地保存目录
 ![](https://github.com/hanbaoan123/image/blob/master/5%E5%AF%BC%E5%85%A5%E4%B8%BA%E4%B8%80%E8%88%AC%E9%A1%B9%E7%9B%AE.jpg "") 
 图5 导入现有项目
+
 ### 1.2.1 Eclipse配置
 
 &emsp;&emsp;代码导入后会出现报错，不要着急，这是因为java和maven等没有进行配置造成的。
+
 * JDK配置
 &emsp;&emsp;在Window->preferences中设置installed JRES，添加jdk（java8及以上版本），同时设置编译级别为1.8。关于JDK的安装与环境变量配置请自行百度。
+
 ![](https://github.com/hanbaoan123/image/blob/master/6jdk.jpg "") 
 图6 安装JRE
 ![](https://github.com/hanbaoan123/image/blob/master/7compiler1.8.jpg "")
 图7 设置编译级别为1.8
+
 * Maven配置
 &emsp;&emsp;在Maven的User Settings中，选择maven的配置文件，关于如何安装和配置maven可以自行百度。
 ![](https://github.com/hanbaoan123/image/blob/master/8maven.jpg "")
@@ -44,6 +47,7 @@
 &emsp;&emsp;如果此时还有报错，则设置项目的编译路径，在项目上右键->Build Path->Configure Build Path，右侧Libraries中选择安装的jdk。
 ![](https://github.com/hanbaoan123/image/blob/master/10%E9%A1%B9%E7%9B%AEjdk.jpg "")
 图10 项目build路径
+
 ### 1.2.2 案例配置
 
 &emsp;&emsp;在该调度平台中已经事先生成好了单机调度标准案例，将“instance”文件夹复制到用户目录下（注意放在别的路径是无效的），如C:\Users\hba下，需要根据自己的系统和用户目录确定。
