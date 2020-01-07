@@ -252,7 +252,7 @@ public class Instance implements Serializable {
 		this.getObjective().setObjectiveValue(0);
 		this.totalAssignedTaskWork = 0;
 		// 括号内可设置比较器
-		readyTaskS = new TreeSet<Operation>(operationComparator);
+		readyTaskS = new TreeSet<Operation>(new OperationEDD());
 		for (Part part : partMap.values()) {
 			part.setCurrOp(part.getOpList().get(0));
 			readyTaskS.add(part.getCurrOp());

@@ -3,6 +3,7 @@ package mm_scheduler.instanceScheduler.util;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -1519,5 +1520,38 @@ public class FileHandle {
 		}
 		return caList;
 	}
+	/**
+	 * 
+	 * @author: hba
+	 * @description: 案例调度中调度步存储，用于动画显示 hba
+	 * @param path
+	 * @param index
+	 * @param fileName
+	 * @param instanceSolutionStep
+	 * @param isClear
+	 *            是否清空已有内容
+	 * @throws IOException
+	 * @date: 2020年1月4日
+	 *
+	 */
+	public void writeInstanceSolutionStep(String path, String index, String fileName,
+			InstanceSolutionStep instanceSolutionStep, boolean isClear) throws IOException {
+		// TODO Auto-generated method stub
 
+		File f = new File(instanceRoot + "/" + path + "/sample/" + index + "/" + fileName + "_dynamic");
+		if (!f.exists()) {
+			mkdir(f.getParentFile());
+			f.createNewFile();
+		} else {
+			if (isClear) {
+				FileWriter fileWriter = new FileWriter(f);
+				fileWriter.write("");
+				fileWriter.flush();
+				fileWriter.close();
+			}
+		}
+		Path infoPath = Paths.get(instanceRoot + "/" + path + "/sample/" + index + "/" + fileName + "_dynamic");
+		String toWrite = mapper.writeValueAsString(instanceSolutionStep) + "\n";
+		Files.write(infoPath, toWrite.getBytes(), StandardOpenOption.APPEND);
+	}
 }

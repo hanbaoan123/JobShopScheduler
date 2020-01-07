@@ -21,12 +21,12 @@ public class SMInstance extends Instance {
 		// 案例初始化时设定优化目标
 		this.objective = new ObjectiveTWT();
 		// 初始化可选规则
-		//this.operationRules.add(new OperationSPT());
-		//this.operationRules.add(new OperationLPT());
-		//this.operationRules.add(new OperationGW());
-		//this.operationRules.add(new OperationLW());
-		//this.operationRules.add(new OperationWSPT());
-		//this.operationRules.add(new OperationWLPT());
+		this.operationRules.add(new OperationSPT());
+		this.operationRules.add(new OperationLPT());
+		this.operationRules.add(new OperationGW());
+		this.operationRules.add(new OperationLW());
+		this.operationRules.add(new OperationWSPT());
+		this.operationRules.add(new OperationWLPT());
 		this.operationRules.add(new OperationEDD());
 	}
 }

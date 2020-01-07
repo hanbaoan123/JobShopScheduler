@@ -17,6 +17,7 @@ import mm_scheduler.instanceScheduler.instance.domain.basicdata.Operation;
 import mm_scheduler.instanceScheduler.instance.domain.basicdata.Part;
 import mm_scheduler.instanceScheduler.instance.domain.solution.InstanceSolution;
 import mm_scheduler.instanceScheduler.instance.domain.solution.InstanceSolutionStep;
+import mm_scheduler.instanceScheduler.instance.manager.ScheduleManager;
 import mm_scheduler.instanceScheduler.rules.*;
 import mm_scheduler.instanceScheduler.rules.basic.OperationRule;
 
@@ -44,109 +45,109 @@ public class InstanceUtil {
 	public static void setInstanceOperationComparator(Instance instance, int actionId) throws Exception {
 		// TODO Auto-generated method stub
 		switch (actionId) {
-		case OperationRule.PART_ACTION_FOPNR:
+		case Action.PART_ACTION_FOPNR:
 			instance.setOperationComparator(new OperationFOPNR());
 			break;
-		case OperationRule.PART_ACTION_MOPNR:
+		case Action.PART_ACTION_MOPNR:
 			instance.setOperationComparator(new OperationMOPNR());
 			break;
-		case OperationRule.PART_ACTION_SPT:
+		case Action.PART_ACTION_SPT:
 			instance.setOperationComparator(new OperationSPT());
 			break;
-		case OperationRule.PART_ACTION_LPT:
+		case Action.PART_ACTION_LPT:
 			instance.setOperationComparator(new OperationLPT());
 			break;
-		case OperationRule.PART_ACTION_SRPT:
+		case Action.PART_ACTION_SRPT:
 			instance.setOperationComparator(new OperationSRPT());
 			break;
-		case OperationRule.PART_ACTION_LRPT:
+		case Action.PART_ACTION_LRPT:
 			instance.setOperationComparator(new OperationLRPT());
 			break;
-		case OperationRule.PART_ACTION_MINSEQ:
+		case Action.PART_ACTION_MINSEQ:
 			instance.setOperationComparator(new OperationMINSEQ());
 			break;
-		case OperationRule.PART_ACTION_EDD:
+		case Action.PART_ACTION_EDD:
 			instance.setOperationComparator(new OperationEDD());
 			break;
-		case OperationRule.PART_ACTION_SPT_TWK_RATIO:
+		case Action.PART_ACTION_SPT_TWK_RATIO:
 			instance.setOperationComparator(new OperationSPTTWKRatio());
 			break;
-		case OperationRule.PART_ACTION_LPT_TWK_RATIO:
+		case Action.PART_ACTION_LPT_TWK_RATIO:
 			instance.setOperationComparator(new OperationLPTTWKRatio());
 			break;
-		case OperationRule.PART_ACTION_SPT_TWKR_RATIO:
+		case Action.PART_ACTION_SPT_TWKR_RATIO:
 			instance.setOperationComparator(new OperationSPTTWKRRatio());
 			break;
-		case OperationRule.PART_ACTION_LPT_TWKR_RATIO:
+		case Action.PART_ACTION_LPT_TWKR_RATIO:
 			instance.setOperationComparator(new OperationLPTTWKRRatio());
 			break;
-		case OperationRule.PART_ACTION_SPT_TWK_MULTI:
+		case Action.PART_ACTION_SPT_TWK_MULTI:
 			instance.setOperationComparator(new OperationSPTTWKMulti());
 			break;
-		case OperationRule.PART_ACTION_LPT_TWK_MULTI:
+		case Action.PART_ACTION_LPT_TWK_MULTI:
 			instance.setOperationComparator(new OperationLPTTWKMulti());
 			break;
-		case OperationRule.PART_ACTION_SPT_TWKR_MULTI:
+		case Action.PART_ACTION_SPT_TWKR_MULTI:
 			instance.setOperationComparator(new OperationSPTTWKRMulti());
 			break;
-		case OperationRule.PART_ACTION_LPT_TWKR_MULTI:
+		case Action.PART_ACTION_LPT_TWKR_MULTI:
 			instance.setOperationComparator(new OperationLPTTWKRMulti());
 			break;
-		case OperationRule.PART_ACTION_SRM:
+		case Action.PART_ACTION_SRM:
 			instance.setOperationComparator(new OperationSRM());
 			break;
-		case OperationRule.PART_ACTION_LRM:
+		case Action.PART_ACTION_LRM:
 			instance.setOperationComparator(new OperationLRM());
 			break;
-		case OperationRule.PART_ACTION_SSO:
+		case Action.PART_ACTION_SSO:
 			instance.setOperationComparator(new OperationSSO());
 			break;
-		case OperationRule.PART_ACTION_LSO:
+		case Action.PART_ACTION_LSO:
 			instance.setOperationComparator(new OperationLSO());
 			break;
-		case OperationRule.PART_ACTION_SPT_SSO_SUM:
+		case Action.PART_ACTION_SPT_SSO_SUM:
 			instance.setOperationComparator(new OperationSPTSSOSum());
 			break;
-		case OperationRule.PART_ACTION_LPT_LSO_SUM:
+		case Action.PART_ACTION_LPT_LSO_SUM:
 			instance.setOperationComparator(new OperationLPTLSOSum());
 			break;
-		case OperationRule.PART_ACTION_S1:
+		case Action.PART_ACTION_S1:
 			instance.setOperationComparator(new OperationS1());
 			break;
-		case OperationRule.PART_ACTION_S2:
+		case Action.PART_ACTION_S2:
 			instance.setOperationComparator(new OperationS2());
 			break;
-		case OperationRule.PART_ACTION_S3:
+		case Action.PART_ACTION_S3:
 			instance.setOperationComparator(new OperationS3());
 			break;
-		case OperationRule.PART_ACTION_S4:
+		case Action.PART_ACTION_S4:
 			instance.setOperationComparator(new OperationS4());
 			break;
-		case OperationRule.PART_ACTION_S5:
+		case Action.PART_ACTION_S5:
 			instance.setOperationComparator(new OperationS5());
 			break;
-		case OperationRule.PART_ACTION_S6:
+		case Action.PART_ACTION_S6:
 			instance.setOperationComparator(new OperationS6());
 			break;
-		case OperationRule.PART_ACTION_S7:
+		case Action.PART_ACTION_S7:
 			instance.setOperationComparator(new OperationS7());
 			break;
-		case OperationRule.PART_ACTION_S8:
+		case Action.PART_ACTION_S8:
 			instance.setOperationComparator(new OperationS8());
 			break;
-		case OperationRule.PART_ACTION_GW:
+		case Action.PART_ACTION_GW:
 			instance.setOperationComparator(new OperationGW());
 			break;
-		case OperationRule.PART_ACTION_LW:
+		case Action.PART_ACTION_LW:
 			instance.setOperationComparator(new OperationLW());
 			break;
-		case OperationRule.PART_ACTION_WSPT:
+		case Action.PART_ACTION_WSPT:
 			instance.setOperationComparator(new OperationWSPT());
 			break;
-		case OperationRule.PART_ACTION_WLPT:
+		case Action.PART_ACTION_WLPT:
 			instance.setOperationComparator(new OperationWLPT());
 			break;
-		// case OperationRule.PART_ACTION_OPNDD:
+		// case Action.PART_ACTION_OPNDD:
 		// scheme.setOperationTaskComparator(new TaskScheduleComparatorOPNDD());
 		// break;
 		default:
@@ -188,92 +189,92 @@ public class InstanceUtil {
 		// TODO Auto-generated method stub
 		double f = 0;
 		switch (actionId) {
-		case OperationRule.PART_ACTION_FOPNR:
-		case OperationRule.PART_ACTION_MOPNR:
+		case Action.PART_ACTION_FOPNR:
+		case Action.PART_ACTION_MOPNR:
 			f = operation.getRemainOpNum();
 			break;
-		case OperationRule.PART_ACTION_SPT:
-		case OperationRule.PART_ACTION_LPT:
+		case Action.PART_ACTION_SPT:
+		case Action.PART_ACTION_LPT:
 			f = operation.getWorkTime();
 			break;
-		case OperationRule.PART_ACTION_SRPT:
-		case OperationRule.PART_ACTION_LRPT:
+		case Action.PART_ACTION_SRPT:
+		case Action.PART_ACTION_LRPT:
 			f = operation.getRemainWorkTime();
 			break;
-		case OperationRule.PART_ACTION_MINSEQ:
+		case Action.PART_ACTION_MINSEQ:
 			f = operation.getPreTime();
 			break;
-		case OperationRule.PART_ACTION_EDD:
+		case Action.PART_ACTION_EDD:
 			f = operation.getPart().getDueDate();
 			break;
-		case OperationRule.PART_ACTION_SPT_TWK_RATIO:
-		case OperationRule.PART_ACTION_LPT_TWK_RATIO:
+		case Action.PART_ACTION_SPT_TWK_RATIO:
+		case Action.PART_ACTION_LPT_TWK_RATIO:
 			f = operation.getWorkTime() / operation.getPart().getTotalWorkTime();
 			break;
-		case OperationRule.PART_ACTION_SPT_TWKR_RATIO:
-		case OperationRule.PART_ACTION_LPT_TWKR_RATIO:
+		case Action.PART_ACTION_SPT_TWKR_RATIO:
+		case Action.PART_ACTION_LPT_TWKR_RATIO:
 			f = operation.getWorkTime() / operation.getRemainWorkTime();
 			break;
-		case OperationRule.PART_ACTION_SPT_TWK_MULTI:
-		case OperationRule.PART_ACTION_LPT_TWK_MULTI:
+		case Action.PART_ACTION_SPT_TWK_MULTI:
+		case Action.PART_ACTION_LPT_TWK_MULTI:
 			f = operation.getWorkTime() * operation.getPart().getTotalWorkTime();
 			break;
-		case OperationRule.PART_ACTION_SPT_TWKR_MULTI:
-		case OperationRule.PART_ACTION_LPT_TWKR_MULTI:
+		case Action.PART_ACTION_SPT_TWKR_MULTI:
+		case Action.PART_ACTION_LPT_TWKR_MULTI:
 			f = operation.getWorkTime() * operation.getRemainWorkTime();
 			break;
-		case OperationRule.PART_ACTION_SRM:
-		case OperationRule.PART_ACTION_LRM:
+		case Action.PART_ACTION_SRM:
+		case Action.PART_ACTION_LRM:
 			f = operation.getRemainWorkTime() - operation.getWorkTime();
 			break;
-		case OperationRule.PART_ACTION_SSO:
-		case OperationRule.PART_ACTION_LSO:
+		case Action.PART_ACTION_SSO:
+		case Action.PART_ACTION_LSO:
 			f = operation.getSuccOp() == null ? 0 : operation.getSuccOp().getWorkTime();
 			break;
-		case OperationRule.PART_ACTION_SPT_SSO_SUM:
-		case OperationRule.PART_ACTION_LPT_LSO_SUM:
+		case Action.PART_ACTION_SPT_SSO_SUM:
+		case Action.PART_ACTION_LPT_LSO_SUM:
 			f = operation.getWorkTime() + (operation.getSuccOp() == null ? 0 : operation.getSuccOp().getWorkTime());
 			break;
-		case OperationRule.PART_ACTION_S1:
+		case Action.PART_ACTION_S1:
 			f = operation.getPrepOp() == null ? operation.getPart().getDueDate()
 					: (operation.getPart().getDueDate() - operation.getPrepOp().getFinish());
 			break;
-		case OperationRule.PART_ACTION_S2:
+		case Action.PART_ACTION_S2:
 			f = (operation.getPrepOp() == null ? operation.getPart().getDueDate()
 					: (operation.getPart().getDueDate() - operation.getPrepOp().getFinish()))
 					/ operation.getRemainWorkTime();
 			break;
-		case OperationRule.PART_ACTION_S3:
+		case Action.PART_ACTION_S3:
 			f = operation.getPrepOp() == null ? operation.getPart().getDueDate()
 					: (operation.getPart().getDueDate() - operation.getPrepOp().getFinish())
 							- operation.getRemainWorkTime();
 			break;
-		case OperationRule.PART_ACTION_S4:
+		case Action.PART_ACTION_S4:
 			f = operation.getPrepOp() == null ? operation.getPart().getDueDate()
 					: (operation.getPart().getDueDate() - operation.getPrepOp().getFinish()) - operation.getWorkTime();
 			break;
-		case OperationRule.PART_ACTION_S5:
+		case Action.PART_ACTION_S5:
 			f = (operation.getPrepOp() == null ? operation.getPart().getDueDate()
 					: (operation.getPart().getDueDate() - operation.getPrepOp().getFinish())) / operation.getWorkTime();
 			break;
-		case OperationRule.PART_ACTION_S6:
+		case Action.PART_ACTION_S6:
 			f = (operation.getPrepOp() == null ? operation.getPart().getDueDate()
 					: (operation.getPart().getDueDate() - operation.getPrepOp().getFinish()))
 					/ operation.getRemainOpNum();
 			break;
-		case OperationRule.PART_ACTION_S7:
+		case Action.PART_ACTION_S7:
 			f = (operation.getPrepOp() == null ? operation.getPart().getDueDate()
 					: (operation.getPart().getDueDate() - operation.getPrepOp().getFinish())
 							- operation.getRemainWorkTime())
 					/ operation.getRemainOpNum();
 			break;
-		case OperationRule.PART_ACTION_S8:
+		case Action.PART_ACTION_S8:
 			f = (operation.getPrepOp() == null ? operation.getPart().getDueDate()
 					: (operation.getPart().getDueDate() - operation.getPrepOp().getFinish())
 							- operation.getRemainWorkTime())
 					/ operation.getRemainWorkTime();
 			break;
-		// case OperationRule.PART_ACTION_OPNDD:
+		// case Action.PART_ACTION_OPNDD:
 		// scheme.setOperationTaskComparator(new TaskScheduleComparatorOPNDD());
 		// break;
 		default:
@@ -372,6 +373,33 @@ public class InstanceUtil {
 		instanceSolutionStep.setCurrObjective(instance.getObjective().getObjectiveValue());
 		fileHandle.writeInstanceSolutionStep(instance.getInstanceCategory(), instance.getIndex() + "",
 				instance.getAltorighmName(), instanceSolutionStep);
+	}
+
+	/**
+	 * 
+	 * @author: hba
+	 * @description: 保存调度结果到本地，用于展示甘特图
+	 * @param instance
+	 * @param operation
+	 * @param isClear
+	 *            是否清空以前的结果
+	 * @throws IOException
+	 * @date: 2020年1月4日
+	 *
+	 */
+	public static void outputSolutionStep(Instance instance, Operation operation, boolean isClear) throws IOException {
+		// 用于保存每步分派结果，用于动态显示甘特图
+		InstanceSolutionStep instanceSolutionStep = new InstanceSolutionStep();
+		instanceSolutionStep.setMachineNum(instance.getMachineNum());
+		instanceSolutionStep.setTaskUid(operation.getName());
+		instanceSolutionStep.setTaskName(operation.getName());
+		instanceSolutionStep.setStart(operation.getStart());
+		instanceSolutionStep.setEnd(operation.getFinish());
+		instanceSolutionStep.setColor(ColorUtil.colorToString(color.colorMap.get(operation.getPartID())));
+		instanceSolutionStep.setDeviceIndex(operation.getMachineID());
+		instanceSolutionStep.setCurrObjective(instance.getObjective().getObjectiveValue());
+		fileHandle.writeInstanceSolutionStep(instance.getInstanceCategory(), instance.getIndex() + "",
+				instance.getAltorighmName(), instanceSolutionStep, isClear);
 	}
 
 	/**
