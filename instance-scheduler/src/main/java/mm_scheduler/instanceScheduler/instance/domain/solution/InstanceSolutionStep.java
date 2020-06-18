@@ -1,5 +1,7 @@
 package mm_scheduler.instanceScheduler.instance.domain.solution;
 
+import java.util.List;
+
 /**
  * 
  * @author: hba
@@ -36,6 +38,10 @@ public class InstanceSolutionStep {
 	 * 颜色
 	 */
 	private String color;
+	/**
+	 * 状态值
+	 */
+	private List state;
 	/**
 	 * 当前目标值
 	 */
@@ -103,5 +109,13 @@ public class InstanceSolutionStep {
 
 	public void setCurrObjective(double currObjective) {
 		this.currObjective = currObjective;
+	}
+
+	public List getState() {
+		return state;
+	}
+
+	public void setState(List state) {
+		this.state = state;
 	}
 }

@@ -118,7 +118,7 @@ var scheduleUid="<%=request.getParameter("SCHEDULEUID")%>";
 var resUid="<%=request.getParameter("RESUID")%>";
 var taskUid="<%=request.getParameter("TASKUID")%>";
 var stateId=0;//"<%=request.getParameter("STATEID")%>";
-var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
+var actionId=0;//"<%=request.getParameter("ACTIONID")%>";
 		var sysPara = "?DEPTID=" + deptId + "&EMPLOYEEID=" + employeeId
 				+ "&SCHEDULEUID=" + scheduleUid;
 		var height = document.body.clientHeight + "px";
@@ -133,7 +133,6 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 		var setTimeoutObj;
 		var currStep = 0;
 		var filePathGol;
-		var colWidth = 60, tableLeft = 20, rowHeight = 20, cellPadding = 2.5, valueDecimals = 1;
 	</script>
 
 	<script type="text/javascript">
@@ -143,7 +142,7 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 		 http://api.highcharts.com/gantt.
 		 */
 		var ganttChart;
-		var today = new Date(), day = 1000 * 60 * 60 * 24, minute = 60 * 1000, second = 1000, each = Highcharts.each, reduce = Highcharts.reduce, isAddingTask = false;
+		var today = new Date(), day = 1000 * 60 * 60 * 24, minute=60*1000,second=1000,each = Highcharts.each, reduce = Highcharts.reduce, isAddingTask = false;
 
 		// Set to 00:00:00:000 today
 		today.setUTCHours(0);
@@ -151,130 +150,18 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 		today.setUTCSeconds(0);
 		today.setUTCMilliseconds(0);
 		today = today.getTime();
-		var elements = new Array();
-		var lines = new Array();
-		Highcharts.drawTable = function(state) {
-			var tableTop = 500, colWidth = 45, tableLeft = 20, rowHeight = 30, cellPadding = 2.5, valueDecimals = 3, valueSuffix = ' °C',tableDis=100;
-			// internal variables
-			var chart = this, series = ganttChart.series, renderer = ganttChart.renderer, cellLeft = tableLeft;
-			if (elements.length > 0) {
-				$.each(elements, function(i, element) {
-					element.hide();
-				});
-				elements = [];
-			}
-			element = renderer.text(
-					'Processing time',
-					cellLeft+3.5*colWidth, tableTop +  rowHeight)
-					.attr({
-						align : 'center'
-					}).add();
-			element = renderer.text(
-					'Scheduling finish',
-					cellLeft+tableDis+8.5*colWidth, tableTop +  rowHeight)
-					.attr({
-						align : 'center'
-					}).add();
-			element = renderer.text(
-					'Machine utilization',
-					cellLeft+2*tableDis+13.2*colWidth, tableTop +  rowHeight)
-					.attr({
-						align : 'center'
-					}).add();
-			if (lines.length == 0) {
-				$.each(state, function(i1, v1) {
-					$.each(v1, function(i2, v2) {
-						$.each(v2,
-								function(i3, v3) {
-									x1 = 37 + (tableDis + colWidth * 5) * i3;
-									y1 = tableTop -20 + (i1+2)
-											* rowHeight;
-									x2 = x1 + (colWidth * 6);
-									y2 = y1;
-									line = Highcharts.tableLine(renderer, x1,
-											y1, x2, y2);
-									lines.push(line);
-									if(i1==state.length-1){
-										x1 = 37 + (tableDis + colWidth * 5) * i3;
-										y1 = tableTop -20 + (i1+1+2)
-												* rowHeight;
-										x2 = x1 + (colWidth * 6);
-										y2 = y1;
-										line = Highcharts.tableLine(renderer, x1,
-												y1, x2, y2);
-										lines.push(line);
-									}
-								});
-						return false;
-					});
-				});
-				$.each(state, function(i1, v1) {
-					$.each(v1, function(i2, v2) {
-						$.each(v2,
-								function(i3, v3) {
-									x1 = 37 +colWidth * (i2) +  (tableDis + colWidth * 5) * i3;
-									y1 = tableTop -20 + (0+2)
-											* rowHeight;
-									x2 = x1;
-									y2 = y1+rowHeight*6;
-									line = Highcharts.tableLine(renderer, x1,
-											y1, x2, y2);
-									lines.push(line);
-									if(i2==v1.length-1){
-										x1 = 37 +colWidth * (i2+1) +  (tableDis + colWidth *5) * i3;
-										y1 = tableTop -20 + (2)
-												* rowHeight;
-										x2 = x1 ;
-										y2 = y1+rowHeight*6;
-										line = Highcharts.tableLine(renderer, x1,
-												y1, x2, y2);
-										lines.push(line);
-									}
-								});
-					});
-					return false;
-				});
-			}
-
-			$.each(state, function(i1, v1) {
-				$.each(v1, function(i2, v2) {
-					$.each(v2, function(i3, v3) {
-						//alert(v3);
-						cellLeft = 60 + colWidth * i2 + (tableDis + colWidth * 5)
-								* i3;
-						// Apply the cell text
-						element = renderer.text(
-								Highcharts.numberFormat(v3, valueDecimals),
-								cellLeft, tableTop + (i1 + 2) * rowHeight)
-								.attr({
-									align : 'center'
-								}).add();
-						elements.push(element);
-						// horizontal lines
-
-					});
-				});
-			});
-		};
-		/**
-		 * Draw a single line in the table
-		 */
-		Highcharts.tableLine = function(renderer, x1, y1, x2, y2) {
-			renderer.path([ 'M', x1, y1, 'L', x2, y2 ]).attr({
-				'stroke' : 'silver',
-				'stroke-width' : 1
-			}).add();
-		}
-		$(document).ready(function() {
-			$("div#schedule-result").css({
-				height : $(document).height() - 30
-			});
-			//初始化调度结果
-			initScheduleResult();
-			// Update disabled status of the remove button, depending on whether or not we
-			// have any selected points.
-
-		});
+		$(document)
+				.ready(
+						function() {
+							$("div#schedule-result").css({
+								height : $(document).height() - 30
+							});
+							//初始化调度结果
+							initScheduleResult();
+							// Update disabled status of the remove button, depending on whether or not we
+							// have any selected points.
+							
+						});
 
 		function requestData(series) {
 			//alert();
@@ -354,25 +241,20 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 																					closed1);
 																	if (closed1 == "true") {
 																		//关闭了则移除其后workCenter=obj.id的div
-																		$
-																				.each(
-																						lastScheduleResult.children,
-																						function(
-																								name,
-																								obj) {
-																							$(
-																									"div")
-																									.remove(
-																											"div[instanceIndex="
-																													+ obj.name
-																													+ "]");
-																						});
+																			$
+																			.each(lastScheduleResult.children,function(name,obj){
+																				$("div")
+																				.remove(
+																						"div[instanceIndex="
+																								+ obj.name
+																								+ "]");
+																			});
 																		$('div')
 																				.remove(
 																						"div[scheduleResult="
 																								+ obj.id
 																								+ "]");
-
+																		
 																	} else {
 																		//打开则初始化代结果，并为每一个子div添加点击事件
 																		initInstance(
@@ -386,7 +268,7 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 																						'#3a87ad');
 																		if (lastScheduleResult
 																				.attr('closed') == "false") {
-
+																			
 																			$(
 																					'div')
 																					.remove(
@@ -595,140 +477,141 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 						devices.push(d.deviceName + "(" + d.deviceUid + ")");
 					});
 					if (devices.length > 0) {
-						maxLength = devices.length - 1;
+						maxLength = devices.length-1;
 					}
 					// Create the chart
-					var chart = Highcharts.ganttChart('container', {
+					var chart = Highcharts
+							.ganttChart(
+									'container',
+									{
 
-						chart : {
-							marginBottom : 280,
-							animation : false,
-							spacingLeft : 1,
-							events : {
-								load : function() {
-									var series = this.series[0], chart = this;
-									//requestData(series);
-									//activeLastPointToolip(chart);
-									//整个load时间运行完后才能显示数据
+										chart : {
+											animation : false,
+											spacingLeft : 1,
+											events : {
+												load : function() {
+													var series = this.series[0], chart = this;
+													//requestData(series);
+													//activeLastPointToolip(chart);
+													//整个load时间运行完后才能显示数据
 
-								}
-							}
-						},
+												}
+											}
+										},
 
-						title : {
-							text : 'Dynamic dispatching based on DRL'
-						},
+										title : {
+											text : '动态甘特图'
+										},
 
-						subtitle : {
-							text : ''
-						},
-						//去除水印
-						credits : {
-							enabled : false
-						},
-						plotOptions : {
-							series : {
-								animation : false, // Do not animate dependency connectors
-								dragDrop : {
-									draggableX : true,
-									draggableY : true,
-									dragMinY : 0,
-									dragMaxY : maxLength,
-									dragPrecisionX : 100
-								// Snap to eight hours
-								},
-								dataLabels : {
-									enabled : true,
-									format : '{point.name}',
-									style : {
-										cursor : 'default',
-										pointerEvents : 'none'
-									}
-								},
-								allowPointSelect : true,
-								point : {
-									events : {
+										subtitle : {
+											text : ''
+										},
+										//去除水印
+										credits : {
+											enabled : false
+										},
+										plotOptions : {
+											series : {
+												animation : false, // Do not animate dependency connectors
+												dragDrop : {
+													draggableX : true,
+													draggableY : true,
+													dragMinY : 0,
+													dragMaxY : maxLength,
+													dragPrecisionX : 100
+												// Snap to eight hours
+												},
+												dataLabels : {
+													enabled : true,
+													format : '{point.name}',
+													style : {
+														cursor : 'default',
+														pointerEvents : 'none'
+													}
+												},
+												allowPointSelect : true,
+												point : {
+													events : {
 
-									}
-								}
-							}
-						},
+													}
+												}
+											}
+										},
 
-						yAxis : {
-							type : 'category',
-							categories : devices,
-							min : 0,
-							max : maxLength,
-							uniqueNames : true
-						},
+										yAxis : {
+											type : 'category',
+											categories : devices,
+											min : 0,
+											max :maxLength,
+											uniqueNames : true
+										},
 
-						xAxis : {
-							type : 'datetime',
-							dateTimeLabelFormats : {
-								millisecond : '%S,%L'
-							},
-							minTickInterval : 10
-						//currentDateIndicator : true
-						},
-						navigator : {
-							enabled : true,
-							series : {
-								type : 'gantt',
-								//控制每列之间的距离值，当highcharts图表宽度固定的情况下，此值越大，柱子宽度越小，反之相反。默认此值为0.1
-								pointPlacement : 0.5,
-								pointPadding : 0.25
-							},
-							yAxis : {
-								min : 0,
-								max : maxLength,
-								reversed : true,
-								categories : []
-							}
-						},
-						scrollbar : {
-							enabled : true
-						},
-						rangeSelector : {
-							buttons : [ {
-								type : 'second',
-								count : 1,
-								text : '1s'
-							}, {
-								type : 'all',
-								text : 'All'
-							} ],
-							allButtonsEnabled : true,
-							enabled : true,
-							selected : 1,
-							inputEnabled : false
-						// 不显示日期输入框
-						},
-						tooltip : {
-							xDateFormat : '%S,%L'
-						},
+										xAxis : {
+											type:'datetime',
+											dateTimeLabelFormats: {
+												millisecond: '%S,%L'
+											},
+											minTickInterval:10
+											//currentDateIndicator : true
+										},
+										navigator : {
+											enabled : true,
+											series : {
+												type : 'gantt',
+												//控制每列之间的距离值，当highcharts图表宽度固定的情况下，此值越大，柱子宽度越小，反之相反。默认此值为0.1
+												pointPlacement : 0.5,
+												pointPadding : 0.25
+											},
+											yAxis : {
+												min : 0,
+												max : maxLength,
+												reversed : true,
+												categories : []
+											}
+										},
+										scrollbar : {
+											enabled : true
+										},
+										rangeSelector : {
+											buttons : [ {
+												type : 'second',
+												count : 1,
+												text : '1s'
+											}, {
+												type : 'all',
+												text : 'All'
+											} ],
+											allButtonsEnabled : true,
+											enabled : true,
+											selected : 1,
+											inputEnabled: false // 不显示日期输入框
+										},
+										tooltip : {
+											xDateFormat : '%S,%L'
+										},
 
-						series : [ {
-							name : 'Scheduling Result',
-							data : []
-						/* ,
-																dataLabels: [{
-																	enabled: true,
-																	//format: '<i style="font-size: 1.5em">{point.name}</i>',
-																	useHTML: true,
-																	align: 'center',
-																	style: {
-																	 color: '{point.color}'
-																	}
-																}] */
-						} ]
-					});
+										series : [ {
+											name : 'Scheduling Result',
+											data : []
+										/* ,
+																				dataLabels: [{
+																					enabled: true,
+																					//format: '<i style="font-size: 1.5em">{point.name}</i>',
+																					useHTML: true,
+																					align: 'center',
+																					style: {
+																					 color: '{point.color}'
+																					}
+																				}] */
+										} ]
+									});
 					ganttChart = chart;
 				}
 			});
 		}
 		function loadGanttTask(filePath) {
-			var currObjective = document.getElementById("currObjectiveInput");
-			currObjective.value = 0;
+			var currObjective=document.getElementById("currObjectiveInput");
+			currObjective.value=0;
 			//初始化机床
 			getInstanceRes(filePath);
 			//首先清除原有的甘特条
@@ -738,8 +621,6 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 					data : []
 				} ]
 			});
-			//获取初始调度状态
-			//initState();
 			currStep = 0;
 			if (setTimeoutObj) {
 				clearInterval(setTimeoutObj);
@@ -755,18 +636,16 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 						var series = ganttChart.series[0];
 						//分步画甘特条
 						$.each(data, function(name, d) {
-							//绘制表格
-							Highcharts.drawTable(d.state);
 							series.addPoint({
-								start : today + d.start,
-								end : today + d.end,
-								y : d.y - 1,
+								start : today+d.start,
+								end : today+d.end,
+								y : d.y-1,
 								name : d.name,
 								milestone : d.milestone,
 								color : d.color
 							});
 							activeLastPointToolip(ganttChart);
-							currObjective.value = d.currObjective;
+							currObjective.value=d.currObjective;
 						});
 					}
 				});
@@ -789,8 +668,8 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 					//分步画甘特条
 					$.each(data, function(name, d) {
 						series.addPoint({
-							start : today + d.start,
-							end : today + d.end,
+							start : today+d.start,
+							end : today+d.end,
 							y : d.y,
 							name : d.name,
 							milestone : d.milestone,
@@ -819,8 +698,8 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 							//分步画甘特条
 							$.each(data, function(name, d) {
 								series.addPoint({
-									start : today + d.start,
-									end : today + d.end,
+									start : today+d.start,
+									end : today+d.end,
 									y : d.y,
 									name : d.name,
 									milestone : d.milestone,
@@ -834,23 +713,24 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 			}
 
 		}
-		function flush() {
-			$("div").remove(".result");
-			initScheduleResult();
+		function flush(){
+			 $("div").remove(".result");
+			 initScheduleResult();
 		}
 	</script>
 	<div id='wrap'>
 		<div id='schedule-result'>
-			<h4>Training results</h4>
+			<h4>学习结果</h4>
 			<p></p>
 		</div>
 		<div id='timeout'>
-			<span>Animation speed(s)：</span> <input id='timeoutInput' value='1'
-				style="width: 100" onchange="onIntervalChange(this.id)"></input> <input
-				type="button" value="Refresh" onClick="flush()" />
+		<span>动画速度(s)：</span>
+			<input id='timeoutInput' value='1' style = "width:100"
+				onchange="onIntervalChange(this.id)"></input>
+				<input type="button" value="刷新" onClick="flush()" />
 		</div>
-		<span>Current objevtive：</span> <input id='currObjectiveInput'
-			value='0' style="width: 100" disabled="disabled"></input>
+		<span>当前目标值：</span>
+			<input id='currObjectiveInput' value='0' style = "width:100" disabled="disabled"></input>
 		<div id="container"
 			style="width: 100%; height: 100%; margin: 0 auto; padding: 0"></div>
 		<div style=''></div>

@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon"
+	href="https://jscdn.com.cn/highcharts/images/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* css 代码  */
+</style>
+<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script
+	src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+</head>
+<body>
+	<div id="container" style="min-width: 400; height: 800"></div>
+	<script>
+		var chart = Highcharts
+				.chart(
+						'container',
+						{
+							chart : {
+								type : 'column'
+							},
+							credits : {
+								enabled : false
+							},
+							title : {
+								text : 'Test results on instances of different sizes',
+								style : {
+									"color" : "#000000",
+									"cursor" : "default",
+									"fontSize" : "10px",
+									"fontFamily" : "Times New Roman"
+								}
+							},
+							xAxis : {
+								categories : [ '6x6', '10x10', '20x5' ],
+								labels : {
+									rotation : 0, // 设置轴标签旋转角度
+									formatter : function() {
+										return this.value
+									},
+									style : {
+										"color" : "#000000",
+										"cursor" : "default",
+										"fontSize" : "10px",
+										"fontFamily" : "Times New Roman"
+									}
+								}
+							},
+							yAxis : {
+								min : 0,
+								max : 300,
+								title : {
+									text : 'Makespan',
+									style : {
+										"color" : "#000000",
+										"cursor" : "default",
+										"fontSize" : "10px",
+										"fontFamily" : "Times New Roman"
+									}
+								},
+								labels : {
+									formatter : function() {
+										return this.value
+									},
+									style : {
+										"color" : "#000000",
+										"cursor" : "default",
+										"fontSize" : "10px",
+										"fontFamily" : "Times New Roman"
+									}
+								}
+							},
+							legend : {
+								shadow : false,
+								itemStyle : {
+									"fontWeight" : "normal",
+									"color" : "#000000",
+									'fontSize' : '10px',
+									"fontFamily" : "Times New Roman"
+								}
+							},
+							tooltip : {
+								shared : true
+							},
+							plotOptions : {
+								column : {
+									grouping : true,
+									shadow : false,
+									borderWidth : 0,
+									groupPadding : 0.05 ,
+								　　pointWidth: 27  //设置柱子宽度
+								}
+							},
+							series : [ 
+								{
+									name : 'GA',
+									color : 'rgba(10,233,36,1)',
+									data : [ 100.8, 178.3, 242.7 ],
+									dataLabels : {
+										enabled : true,
+										rotation : 0,
+										color : '#000000',
+										align : 'center',
+										format : '{point.y:.1f}', // :.1f 为保留 1 位小数
+										y : 0,
+										style : {
+											"fontWeight" : "normal",
+											"fontSize" : "10px",
+											"fontFamily" : "Times New Roman"
+										}
+									}
+								// 通过 pointPadding 和 pointPlacement 控制柱子位置
+								},{
+								name : 'DRL',
+								color : 'rgba(248,0,63,1)',
+								data : [ 108.6, 186.2, 246.8 ],
+								dataLabels : {
+									enabled : true,
+									rotation : 0,
+									color : '#000000',
+									align : 'center',
+									format : '{point.y:.1f}', // :.1f 为保留 1 位小数
+									y : 0,
+									style : {
+										"fontWeight" : "normal",
+										"fontSize" : "10px",
+										"fontFamily" : "Times New Roman"
+									}
+								}
+							// 通过 pointPadding 和 pointPlacement 控制柱子位置
+							}, {
+								name : 'best rule 1',
+								color : 'rgba(248,161,63,1)',
+								data : [ 114.6, 198.7, 263.8 ],
+								dataLabels : {
+									enabled : true,
+									rotation : 0,
+									color : '#000000',
+									align : 'center',
+									format : '{point.y:.1f}', // :.1f 为保留 1 位小数
+									y : 0,
+									style : {
+										"fontWeight" : "normal",
+										"fontSize" : "10px",
+										"fontFamily" : "Times New Roman"
+									}
+								}
+							// 通过 pointPadding 和 pointPlacement 控制柱子位置
+							}, {
+								name : 'best rule 2',
+								color : 'rgba(200,100,100,1)',
+								data : [ 115.6, 200.0, 265.2 ],
+								dataLabels : {
+									enabled : true,
+									rotation : 0,
+									color : '#000000',
+									align : 'center',
+									format : '{point.y:.1f}', // :.1f 为保留 1 位小数
+									y : 0,
+									style : {
+										"fontWeight" : "normal",
+										"fontSize" : "10px",
+										"fontFamily" : "Times New Roman"
+									}
+								}
+							}, {
+								name : 'best rule 3',
+								color : 'rgba(150,150,200,1)',
+								data : [ 117.6, 204.4, 268.1 ],
+								dataLabels : {
+									enabled : true,
+									rotation : 0,
+									color : '#000000',
+									align : 'center',
+									format : '{point.y:.1f}', // :.1f 为保留 1 位小数
+									y : 0,
+									style : {
+										"fontWeight" : "normal",
+										"fontSize" : "10px",
+										"fontFamily" : "Times New Roman"
+									}
+								}
+							// 通过 pointPadding 和 pointPlacement 控制柱子位置
+							} ]
+						});
+	</script>
+</body>
+</html>

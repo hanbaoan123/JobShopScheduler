@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon"
+	href="https://jscdn.com.cn/highcharts/images/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* css 代码  */
+</style>
+<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script
+	src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+</head>
+<body>
+	<div id="container" style="min-width: 400; height: 800"></div>
+	<script>
+		var chart = Highcharts
+				.chart(
+						'container',
+						{
+							chart : {
+								type : 'column'
+							},
+							credits : {
+								enabled : false
+							},
+							title : {
+								text : 'Comparison of different exploration vs exploitation strategies',
+								style : {
+									"color" : "#000000",
+									"cursor" : "default",
+									"fontSize" : "10px",
+									"fontFamily" : "Times New Roman"
+								}
+							},
+							xAxis : {
+								categories : [ 'ft06', 'ft10', 'ft20', 'abz5',
+										'abz7', 'la01', 'la06', 'la12', 'la16',
+										'la26', 'la31', 'la36', 'orb01',
+										'orb02', 'yn01', 'yn02' ],
+								labels : {
+									rotation : -90, // 设置轴标签旋转角度
+									formatter : function() {
+										return this.value
+									},
+									style : {
+										"color" : "#000000",
+										"cursor" : "default",
+										"fontSize" : "10px",
+										"fontFamily" : "Times New Roman"
+									}
+								}
+							},
+							yAxis : {
+								min : 0,
+								max : 1950,
+								title : {
+									text : 'Makespan',
+									style : {
+										"color" : "#000000",
+										"cursor" : "default",
+										"fontSize" : "10px",
+										"fontFamily" : "Times New Roman"
+									}
+								},
+								labels : {
+									formatter : function() {
+										return this.value
+									},
+									style : {
+										"color" : "#000000",
+										"cursor" : "default",
+										"fontSize" : "10px",
+										"fontFamily" : "Times New Roman"
+									}
+								}
+							},
+							legend : {
+								shadow : false,
+								itemStyle : {
+									"fontWeight":"normal",
+									"color" : "#000000",
+									'fontSize' : '10px',
+									"fontFamily" : "Times New Roman"
+								}
+							},
+							tooltip : {
+								shared : true
+							},
+							plotOptions : {
+								column : {
+									grouping : false,
+									shadow : false,
+									borderWidth : 0.5
+								}
+							},
+							series : [
+									{
+										name : 'ε-decreasing',
+										color : 'rgba(248,161,63,1)',
+										data : [ 55, 1085, 1465, 1384, 802,
+												666, 926, 1076, 1027, 1415,
+												1946, 1480, 1225, 1020, 1075,
+												1108 ],
+										pointPadding : 0.25,
+										dataLabels: {
+								            enabled: true,
+								            rotation: 0,
+								            color: '#000000',
+								            align: 'center',
+								            format: '{point.y:.0f}', // :.1f 为保留 1 位小数
+								            y: 0,
+								            style : {
+								            	"fontWeight":"normal",
+												"fontSize" : "10px",
+												"fontFamily" : "Times New Roman"
+											}
+								        }
+									// 通过 pointPadding 和 pointPlacement 控制柱子位置
+									},
+									{
+										name : 'ε-decreasing with elitist',
+										color : 'rgba(186,60,61,.9)',
+										data : [ 55, 1080, 1327, 1335, 789,
+												666, 926, 1076, 1027, 1372, 1945,
+												1431, 1199, 954, 1058, 1095 ],
+										pointPadding : 0.4
+									} ]
+						});
+	</script>
+</body>
+</html>

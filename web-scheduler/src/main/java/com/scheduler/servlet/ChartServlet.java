@@ -27,7 +27,7 @@ import net.sf.json.JSONObject;
 
 /**
  *
- * @author hba 2018年8月1日16:48:06
+ * @author hba 2018楠烇拷8閺堬拷1閺冿拷16:48:06
  */
 @Component("chartServlet")
 public class ChartServlet extends HttpServlet {
@@ -48,27 +48,27 @@ public class ChartServlet extends HttpServlet {
 		String stepPath = request.getParameter("stepPath");
 		String stepIndex = request.getParameter("stepIndex");
 		String instanceIndexPath = request.getParameter("instanceIndexPath");
-		response.setContentType("application/json;charset=utf-8");// 指定返回的格式为JSON格式
-		response.setCharacterEncoding("UTF-8");// setContentType与setCharacterEncoding的顺序不能调换，否则还是无法解决中文乱码的问题
+		response.setContentType("application/json;charset=utf-8");// 閹稿洤鐣炬潻鏂挎礀閻ㄥ嫭鐗稿蹇庤礋JSON閺嶇厧绱�
+		response.setCharacterEncoding("UTF-8");// setContentType娑撳窏etCharacterEncoding閻ㄥ嫰銆庢惔蹇庣瑝閼冲�熺殶閹诡澁绱濋崥锕�鍨潻妯绘Ц閺冪姵纭剁憴锝呭枀娑擃厽鏋冩稊杈╃垳閻ㄥ嫰妫舵０锟�
 		JSONArray jsonArray = new JSONArray();
 		try {
 			switch (method) {
-			// 调度案例获取（instance下）
+			// 鐠嬪啫瀹冲鍫滅伐閼惧嘲褰囬敍鍧昻stance娑撳绱�
 			case "getInstanceSolutionPath":
 				jsonArray = this.getInstanceSolutionPath();
 				break;
-			// 获取调度案例结果所在文件
+			// 閼惧嘲褰囩拫鍐ㄥ濡楀牅绶ョ紒鎾寸亯閹碉拷閸︺劍鏋冩禒锟�
 			case "getInstanceIndex":
 				jsonArray = this.getInstanceIndex(scheduleResultPath);
 				break;
 			case "getInstanceSolutionStep":
 				jsonArray = this.getInstanceSolutionStep(instanceIndexPath);
 				break;
-			// 获取调度案例的机床
+			// 閼惧嘲褰囩拫鍐ㄥ濡楀牅绶ラ惃鍕簚鎼达拷
 			case "getInstanceRes":
 				jsonArray = this.getInstanceRes(instanceStepPath);
 				break;
-			// 获取调度案例结果中的某一行，即第几次分派
+			// 閼惧嘲褰囩拫鍐ㄥ濡楀牅绶ョ紒鎾寸亯娑擃厾娈戦弻鎰鐞涘矉绱濋崡宕囶儑閸戠姵顐奸崚鍡樻烦
 			case "getSomeStep":
 				jsonArray = this.getSomeStep(stepPath, stepIndex);
 				break;
@@ -112,7 +112,7 @@ public class ChartServlet extends HttpServlet {
 		JSONArray jsonArray = new JSONArray();
 		FileHandle fileHandle = new FileHandle();
 		try {
-			File[] files = fileHandle.readInstanceIndex(scheduleResultPath + "/sample");
+			File[] files = fileHandle.readInstanceIndex(scheduleResultPath + "/train");
 			if (files != null && files.length > 0) {
 				for (File file : files) {
 					JSONObject jsonObject = new JSONObject();
@@ -188,6 +188,12 @@ public class ChartServlet extends HttpServlet {
 				jsonObject.put("name", learnHis.getTaskName());
 				jsonObject.put("color", learnHis.getColor());
 				jsonObject.put("currObjective", learnHis.getCurrObjective());
+				// 先对状态进行处理，每个层为一个jsonobject
+				JSONArray ja = new JSONArray();
+				for (Object l1 : learnHis.getState()) {
+					// ja.
+				}
+				jsonObject.put("state", JSONArray.fromObject(learnHis.getState()));
 				jsonArray.add(jsonObject);
 			}
 		} catch (IOException e) {
@@ -205,7 +211,7 @@ public class ChartServlet extends HttpServlet {
 	}
 
 	/**
-	 * 格式化JSON时间
+	 * 閺嶇厧绱￠崠鏈朣ON閺冨爼妫�
 	 * 
 	 * @param date
 	 * @return
@@ -223,7 +229,7 @@ public class ChartServlet extends HttpServlet {
 	}
 
 	/**
-	 * 格式化JSON日期
+	 * 閺嶇厧绱￠崠鏈朣ON閺冦儲婀�
 	 * 
 	 * @param date
 	 * @return
