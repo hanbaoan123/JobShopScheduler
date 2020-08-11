@@ -190,10 +190,10 @@ public class ChartServlet extends HttpServlet {
 				jsonObject.put("currObjective", learnHis.getCurrObjective());
 				// 先对状态进行处理，每个层为一个jsonobject
 				JSONArray ja = new JSONArray();
-				for (Object l1 : learnHis.getState()) {
-					// ja.
+				if (learnHis.getState() != null) {
+					jsonObject.put("state", JSONArray.fromObject(learnHis.getState()));
 				}
-				jsonObject.put("state", JSONArray.fromObject(learnHis.getState()));
+
 				jsonArray.add(jsonObject);
 			}
 		} catch (IOException e) {

@@ -153,8 +153,10 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 		today = today.getTime();
 		var elements = new Array();
 		var lines = new Array();
+		var circles=new Array();
+		var tableTop = 550, colWidth = 45, tableLeft = 20, rowHeight = 30, cellPadding = 2.5, valueDecimals = 3, valueSuffix = ' °C',tableDis=100;
+		var radius=15,circleLeft=60;
 		Highcharts.drawTable = function(state) {
-			var tableTop = 500, colWidth = 45, tableLeft = 20, rowHeight = 30, cellPadding = 2.5, valueDecimals = 3, valueSuffix = ' °C',tableDis=100;
 			// internal variables
 			var chart = this, series = ganttChart.series, renderer = ganttChart.renderer, cellLeft = tableLeft;
 			if (elements.length > 0) {
@@ -265,6 +267,28 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 				'stroke-width' : 1
 			}).add();
 		}
+		//绘制拓扑排序
+		function drawTopologicalSorting(d){
+			if(!d.name){
+				return;
+			}
+			var renderer = ganttChart.renderer;
+			circleLeft=circleLeft+radius*2
+			var circle=renderer.circle(circleLeft, tableTop-30, radius).attr({
+				fill: d.color,
+				stroke: 'black',
+				'stroke-width': 1
+			}).add();
+			var circleText=renderer.text(d.name,circleLeft, tableTop-30+5).attr({
+				align : 'center'
+			}).css({
+				fontSize:'10px'
+			}).add();
+			circles.push(circle);
+			circles.push(circleText);
+		}
+		
+		
 		$(document).ready(function() {
 			$("div#schedule-result").css({
 				height : $(document).height() - 30
@@ -601,7 +625,8 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 					var chart = Highcharts.ganttChart('container', {
 
 						chart : {
-							marginBottom : 280,
+							marginBottom : 320,
+							marginRight : 0,
 							animation : false,
 							spacingLeft : 1,
 							events : {
@@ -741,6 +766,7 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 			//获取初始调度状态
 			//initState();
 			currStep = 0;
+			circleLeft=60;
 			if (setTimeoutObj) {
 				clearInterval(setTimeoutObj);
 			}
@@ -757,6 +783,8 @@ var actionId=0;//"<%=request.getParameter("ACTIONID")%>	";
 						$.each(data, function(name, d) {
 							//绘制表格
 							Highcharts.drawTable(d.state);
+							//绘制拓扑排序
+							drawTopologicalSorting(d);
 							series.addPoint({
 								start : today + d.start,
 								end : today + d.end,

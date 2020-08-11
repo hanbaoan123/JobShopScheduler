@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon"
+	href="https://jscdn.com.cn/highcharts/images/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* css 代码  */
+</style>
+<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/modules/oldie.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+</head>
+<body>
+	<div id="container" style="min-width: 1000px; min-height: 900px"></div>
+	<script>
+		var chart = Highcharts
+				.chart(
+						'container',
+						{
+							chart : {
+								type : 'line'
+							//width: 2360,
+							//height:1024
+							},
+							title : {
+								text : 'Curve of scheduling score between DDDQNPR and best rule'
+							},
+							legend : {
+								layout : 'vertical',
+								align : 'right',
+								verticalAlign : 'top',
+								x : -30,
+								y : 50,
+								floating : true,
+								itemStyle : {
+									fontSize : '18px'
+								}
+							},
+							credits : {
+								enabled : false
+							},
+							subtitle : {
+							//text: '数据来源: WorldClimate.com'
+							},
+							exporting : {
+								sourceWidth : 1600,
+								sourceHeight : 900,
+								scale : 1
+							},
+							xAxis : {
+								type : 'category',
+								categories : [ 'ft06.txt(6x6)',
+										'la01.txt(10x5)', 'la02.txt(10x5)',
+										'la03.txt(10x5)', 'la04.txt(10x5)',
+										'la05.txt(10x5)', 'la06.txt(15x5)',
+										'la07.txt(15x5)', 'la08.txt(15x5)',
+										'la09.txt(15x5)', 'la10.txt(15x5)',
+										'ft10.txt(10x10)', 'ft20.txt(20x5)',
+										'abz5.txt(10x10)', 'orb01.txt(10x10)',
+										'orb02.txt(10x10)', 'la11.txt(20x5)',
+										'la12.txt(20x5)', 'la13.txt(20x5)',
+										'la14.txt(20x5)', 'la15.txt(20x5)',
+										'la16.txt(10x10)', 'la17.txt(10x10)',
+										'la18.txt(10x10)', 'la19.txt(10x10)',
+										'la20.txt(10x10)', 'la21.txt(15x10)',
+										'la22.txt(15x10)', 'la23.txt(15x10)',
+										'la24.txt(15x10)', 'la25.txt(15x10)',
+										'swv01.txt(20x10)', 'la26.txt(20x10)',
+										'la27.txt(20x10)', 'la28.txt(20x10)',
+										'la29.txt(20x10)', 'la30.txt(20x10)',
+										'la36.txt(15x15)', 'la37.txt(15x15)',
+										'la38.txt(15x15)', 'la39.txt(15x15)',
+										'la40.txt(15x15)', 'ta01.txt(15x15)',
+										'ta02.txt(15x15)', 'abz7.txt(20x15)',
+										'swv06.txt(20x15)', 'la31.txt(30x10)',
+										'la32.txt(30x10)', 'la33.txt(30x10)',
+										'la34.txt(30x10)', 'la35.txt(30x10)',
+										'dmu01.txt(20x15)', 'dmu41.txt(20x15)',
+										'ta11.txt(20x15)', 'ta12.txt(20x15)',
+										'yn01.txt(20x20)', 'yn02.txt(20x20)',
+										'dmu06.txt(20x20)', 'dmu46.txt(20x20)',
+										'ta21.txt(20x20)', 'ta22.txt(20x20)',
+										'dmu11.txt(30x15)', 'dmu51.txt(30x15)',
+										'ta31.txt(30x15)', 'ta32.txt(30x15)',
+										'swv11.txt(50x10)', 'swv16.txt(50x10)',
+										'dmu16.txt(30x20)', 'dmu21.txt(40x15)',
+										'dmu56.txt(30x20)', 'dmu61.txt(40x15)',
+										'dmu66.txt(40x20)', 'ta41.txt(30x20)',
+										'ta42.txt(30x20)', 'dmu31.txt(50x15)',
+										'dmu71.txt(50x15)', 'ta51.txt(50x15)',
+										'ta52.txt(50x15)', 'dmu26.txt(40x20)',
+										'dmu36.txt(50x20)', 'dmu76.txt(50x20)',
+										'ta61.txt(50x20)', 'ta62.txt(50x20)',
+										'ta71.txt(100x20)', 'ta72.txt(100x20)' ],
+								title : {
+									text : 'Instances',
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "16px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								labels : {
+									rotation : -90,
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "15px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								tickWidth : 1,
+								tickmarkPlacement : 'on'
+							},
+							yAxis : {
+								title : {
+									text : 'Scheduling score (%)',
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "16px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								labels : {
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "16px",
+										"fontFamily" : "Time New Roman"
+									}
+								}
+							},
+							plotOptions : {
+								series : {
+									dataLabels : {
+										align : 'left',
+										enabled : true
+									},
+									lineWidth : 1
+								}
+							},
+							series : [
+									{
+										name : 'Best rule',
+										data : [ 96.49, 95.97, 81.98, 89.10,
+												76.33, 96.90, 100.00, 93.98,
+												93.10, 96.55, 98.16, 81.44,
+												81.47, 85.04, 81.71, 83.77,
+												97.29, 92.03, 96.56, 100.00,
+												86.59, 91.04, 88.29, 86.27,
+												81.12, 84.38, 80.77, 84.12,
+												85.01, 81.02, 84.59, 73.17,
+												84.64, 77.43, 77.85, 79.34,
+												89.50, 83.97, 83.15, 82.54,
+												79.70, 81.63, 78.81, 83.83,
+												81.80, 70.23, 93.21, 93.01,
+												88.20, 86.92, 86.84, 71.64,
+												66.97, 75.89, 76.03, 82.23,
+												78.52, 70.29, 64.65, 77.93,
+												78.44, 72.30, 64.80, 73.04,
+												74.54, 73.76, 99.29, 77.66,
+												75.98, 63.32, 64.03, 64.30,
+												69.03, 72.32, 85.09, 64.58,
+												75.62, 79.95, 79.08, 77.83,
+												61.92, 80.79, 79.30, 87.68,
+												89.11 ],
+										dataLabels : {
+											align : 'center',
+											enabled : true,
+											style : {
+												"color" : 'black',
+												"cursor" : "default",
+												"fontSize" : "16px",
+												"fontFamily" : "Time New Roman"
+											}
+										},
+										marker : {
+											enabled : true,
+											radius : 5
+										}
+									},
+									{
+										name : 'DDDQNPR',
+										data : [ 100.00, 100.00, 93.04, 93.14,
+												92.62, 100.00, 100.00, 100.00,
+												100.00, 100.00, 100.00, 91.63,
+												96.44, 94.27, 88.77, 96.10,
+												100.00, 99.24, 99.91, 100.00,
+												98.85, 96.43, 96.91, 98.72,
+												95.79, 97.62, 90.02, 90.79,
+												98.01, 90.86, 91.57, 83.16,
+												91.79, 88.40, 87.73, 87.07,
+												95.62, 93.58, 90.71, 88.72,
+												90.86, 91.47, 88.95, 88.48,
+												86.43, 81.22, 96.22, 97.37,
+												96.46, 91.54, 97.27, 81.87,
+												74.76, 85.29, 83.81, 85.99,
+												82.54, 78.18, 72.34, 83.31,
+												83.48, 80.47, 73.74, 80.81,
+												80.60, 80.34, 100.00, 84.59,
+												83.35, 71.88, 71.80, 70.14,
+												74.75, 77.24, 85.61, 72.09,
+												84.58, 85.35, 81.60, 81.95,
+												72.38, 83.62, 82.23, 92.48,
+												90.17 ],
+										dataLabels : {
+											align : 'center',
+											enabled : false
+										},
+										color : 'orange',
+										marker : {
+											enabled : true,
+											radius : 5
+										}
+									} ]
+						});
+	</script>
+</body>
+</html>
