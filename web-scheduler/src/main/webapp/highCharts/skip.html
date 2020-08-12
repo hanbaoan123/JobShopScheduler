@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon"
+	href="https://jscdn.com.cn/highcharts/images/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* var chart = Highcharts.chart('container',{
+	chart: {
+		type: 'column'
+	},
+	title: {
+		text: '月平均降雨量'
+	},
+	subtitle: {
+		text: '数据来源: WorldClimate.com'
+	},
+	xAxis: {
+		categories: [
+			'0.5%','1%','2%','5%','10%','50%','100%'
+		],
+		crosshair: true
+	},
+	yAxis: {
+		min: 0,
+		title: {
+			text: '降雨量 (mm)'
+		}
+	},
+	tooltip: {
+		// head + 每个 point + footer 拼接成完整的 table
+		headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+		pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+		'<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+		footerFormat: '</table>',
+		shared: true,
+		useHTML: true
+	},
+	plotOptions: {
+		column: {
+			borderWidth: 0
+		}
+	},
+	series: [{
+		name: 'la16.txt(10x10)',
+		data: [96.23,96.23,96.33 ,96.23 ,94.69 ,91.39 ,91.04 ],
+		type: 'column',
+	}, {
+		name: 'ta42.txt(30x20)',
+		data: [74.38 ,78.60 ,79.53 ,79.09 ,78.63 ,72.32 ,72.32  ]
+	}, {
+		name: 'dmu76.txt(50x20)',
+		data: [66.86 ,68.73 ,70.22 ,72.38 ,70.77 ,66.47 ,61.92 ]
+	}]
+});  
+
+var chart = Highcharts.chart('container',{
+	chart: {
+		type: 'column'
+	},
+	title: {
+		text: '月平均降雨量'
+	},
+	subtitle: {
+		text: '数据来源: WorldClimate.com'
+	},
+	xAxis: {
+		categories: [
+			'la16.txt(10x10)','ta42.txt(30x20)','dmu76.txt(50x20)'
+		],
+		crosshair: true
+	},
+	yAxis: {
+		min: 0,
+		title: {
+			text: '降雨量 (mm)'
+		}
+	},
+	tooltip: {
+		// head + 每个 point + footer 拼接成完整的 table
+		headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+		pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+		'<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+		footerFormat: '</table>',
+		shared: true,
+		useHTML: true
+	},
+	plotOptions: {
+		column: {
+			borderWidth: 0
+		}
+	},
+	series: [{
+		name: '0.5%',
+		data: [96.23, 74.38, 66.86 ]
+	}, {
+		name: '1%',
+		data: [96.23, 78.60, 68.73 ]
+	}, {
+		name: '2%',
+		data: [96.33, 79.53 ,70.22]
+	}, {
+		name: '5%',
+		data: [96.23, 79.09, 72.38 ]
+	}, {
+		name: '10%',
+		data: [94.69, 78.63, 70.77]
+	}, {
+		name: '50%',
+		data: [91.39, 72.32, 66.47 ]
+	}, {
+		name: '100%',
+		data: [91.04, 72.32, 61.92 ]
+	}]
+});
+
+
+var chart = Highcharts.chart('container',{
+	chart: {
+		type: 'line'
+	},
+	title: {
+		text: '月平均降雨量'
+	},
+	subtitle: {
+		text: '数据来源: WorldClimate.com'
+	},
+	legend : {
+		layout : 'vertical',
+		align : 'right',
+		verticalAlign : 'top',
+		x : -50,
+		y : 60,
+		floating : true,
+		symbolWidth:50,
+		itemStyle : {
+			fontSize : '10px'
+		}
+	},
+	xAxis: {
+		categories: [
+			'0.5%','1%','2%','5%','10%','50%','100%'
+		],
+		crosshair: true
+	},
+	yAxis: [{
+		lineWidth: 1,
+		title: {
+			text: 'Scheduling score (%)'
+		}
+	}, {
+		lineWidth: 1,
+		opposite: true,
+		title: {
+			text: 'Average runtime per episode'
+		}
+	}],
+	tooltip: {
+		// head + 每个 point + footer 拼接成完整的 table
+		headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+		pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+		'<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+		footerFormat: '</table>',
+		shared: true,
+		useHTML: true
+	},
+	plotOptions: {
+		column: {
+			borderWidth: 0
+		}
+	},
+	series: [{
+		name: 'la16.txt(10x10)',
+		data: [96.23,96.23,96.33 ,96.23 ,94.69 ,91.39 ,91.04 ],
+		color : 'blue',
+	}, {
+		name:'la16.txt(10x10) 时间',
+		data:[1.174999725,0.6110571,0.269745538,0.1556756,0.063347113,0.05033445],
+		color : 'blue',
+		dashStyle:'Dash',
+		yAxis: 1
+	},{
+		name: 'ta42.txt(30x20)',
+		data: [74.38 ,78.60 ,79.53 ,79.09 ,78.63 ,72.32 ,72.32  ],
+		color : 'red',
+	}, {
+		name:'ta42.txt(30x20) 时间',
+		data:[6.738332038,4.124451225,2.522845713,0.357506063,0.218158325,0.105043363,0.0824731],
+		color : 'red',
+		dashStyle:'Dash',
+		yAxis: 1
+	}, {
+		name: 'dmu76.txt(50x20)',
+		data: [66.86 ,68.73 ,70.22 ,72.38 ,70.77 ,66.47 ,61.92 ],
+		color : 'green',
+	},{
+		name:'dmu76.txt(50x20) 时间',
+		data:[4.197822275,2.18917905,1.206901413,0.587193263,0.398545013,0.2356853,0.189914925],
+		color : 'green',
+		dashStyle:'Dash',
+		yAxis: 1
+	}]
+});  
+
+
+*/
+</style>
+<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/modules/oldie.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+</head>
+<body>
+	<div id="container" style="min-width: 1000px; min-height: 900px"></div>
+	<script>
+		var chart = Highcharts.chart('container', {
+			chart : {
+				marginRight : 80
+			// like left
+			},
+			xAxis : {
+				//categories : [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
+					//	'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ],
+				title : {
+					text : 'Skip ratio'
+				},
+				crosshair: true
+			},
+			yAxis : [ {
+				lineWidth : 1,
+				title : {
+					text : 'Scheduling score (%)'
+				}
+			}, {
+				lineWidth : 1,
+				opposite : true,
+				title : {
+					text : 'Average running time per episode (s)'
+				}
+			} ],
+			series : [
+					{
+						data : [ [0.1,29.9], [0.2,71.5], [0.3,106.4], [0.4,129.2], [0.5,144.0], [0.6,176.0], [0.7,135.6],
+								[0.8,148.5], [0.9,216.4], [1.0,194.1], [1.1,95.6], [1.2,54.4] ],
+								type: 'line',
+					},
+					 ]
+		});
+	</script>
+</body>
+</html>
