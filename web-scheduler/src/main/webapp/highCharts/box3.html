@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon"
+	href="https://jscdn.com.cn/highcharts/images/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* css 代码  */
+</style>
+<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/highcharts-more.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script
+	src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+</head>
+<body>
+	<div id="container"
+		style="height: 800px; margin: auto; min-width: 1000px; max-width: 1000px"></div>
+	<script>
+		var chart = Highcharts
+				.chart(
+						'container',
+						{
+							chart : {
+								type : 'boxplot'
+							},
+							title : {
+								text : 'Highcharts 箱线图'
+							},
+							credits : {
+								enabled : false
+							},
+							legend : {
+								enabled : true
+							},
+							xAxis : {
+								categories : [ '0.2', '0.4', '0.6' ],
+								title : {
+									text : ''
+								}
+							},
+							yAxis : {
+								title : {
+									text : '平均制造期'
+								}
+							},
+							tooltip : {
+								pointFormat : '<span style="color:{point.color}">\u25CF</span> <b> {series.name}</b><br/>'
+										+ // eslint-disable-line no-dupe-keys
+										'最大值: {point.high}<br/>'
+										+ 'Q2\t: {point.q3}<br/>'
+										+ '中位数: {point.median}<br/>'
+										+ 'Q1\t: {point.q1}<br/>'
+										+ '最小值: {point.low}<br/>'
+							},
+							series : [
+									{
+										name : 'DDDQNPR',
+										data : [
+												[ 4054, 4203.5, 4326, 4417.25,
+														4659 ],
+												[ 4059, 4144.5, 4234.5,
+														4332.25, 4870 ],
+												[ 4049, 4289, 4421, 4580.25,
+														5147 ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										}
+									},
+									{
+										name : 'Best rule',
+										data : [
+												[ 3926, 4141.75, 4215.5,
+														4250.5, 4374 ],
+												[ 4007, 4161.5, 4221, 4348.5,
+														4488 ],
+												[ 4129, 4288, 4376, 4513.25,
+														4721 ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										}
+									},
+									{
+										name : 'GA_PRIORITY_CODE',
+										data : [
+												[ 4006, 4109.75, 4182.5, 4233,
+														4320 ],
+												[ 3981, 4081.25, 4152, 4211.75,
+														4340 ],
+												[ 4004, 4195.5, 4257.5,
+														4381.75, 4701 ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										}
+									},
+									{
+										name : 'GA_RULE_CODE',
+										data : [
+												[ 3942, 4095, 4179, 4231.75,
+														4335 ],
+												[ 3976, 4089.75, 4148, 4245.5,
+														4433 ],
+												[ 4018, 4195.5, 4282, 4396.75,
+														4701 ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										}
+									} ]
+						});
+	</script>
+</body>
+</html>

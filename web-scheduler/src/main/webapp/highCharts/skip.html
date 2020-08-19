@@ -230,20 +230,20 @@ var chart = Highcharts.chart('container',{
 								enabled : false
 							},
 							exporting : {
-								sourceWidth : 1600,
-								sourceHeight : 900,
+								sourceWidth : 1280,
+								sourceHeight : 720,
 								scale : 1
 							},
 							legend : {
 								layout : 'vertical',
 								align : 'right',
 								verticalAlign : 'top',
-								x : -70,
-								y : 60,
+								x : -100,
+								y : 45,
 								floating : true,
 								symbolWidth : 50,
 								itemStyle : {
-									fontSize : '18px'
+									fontSize : '12px'
 								}
 							},
 							xAxis : {
@@ -284,7 +284,7 @@ var chart = Highcharts.chart('container',{
 								},
 								labels : {
 									style : {
-										"color" : 'blue',
+										"color" : 'rgb(255,112,67)',
 										"cursor" : "default",
 										"fontSize" : "16px",
 										"fontFamily" : "Time New Roman"
@@ -304,7 +304,7 @@ var chart = Highcharts.chart('container',{
 								},
 								labels : {
 									style : {
-										"color" : 'red',
+										"color" : 'rgb(51,187,238)',
 										"cursor" : "default",
 										"fontSize" : "16px",
 										"fontFamily" : "Time New Roman"
@@ -327,10 +327,20 @@ var chart = Highcharts.chart('container',{
 							},
 							series : [
 									{
-										name : 'la16.txt(10x10)',
+										name : 'scheduling score of la16.txt(10x10)',
 										data : [ 96.23, 96.23, 96.33, 96.23,
 												94.69, 91.39, 91.04 ],
-										color : 'blue',
+										color : 'rgb(255,112,67)',
+										dataLabels : {
+											align : 'center',
+											enabled : true,
+											style : {
+												"color" : 'rgb(255,112,67)',
+												"cursor" : "default",
+												"fontSize" : "12px",
+												"fontFamily" : "Time New Roman"
+											}
+										},
 										marker : {
 											enabled : true,
 											symbol : 'circle',
@@ -338,12 +348,20 @@ var chart = Highcharts.chart('container',{
 										}
 									},
 									{
-										name : 'la16.txt(10x10) 时间',
-										data : [ 1.174999725, 1.174999725,
-												0.6110571, 0.269745538,
-												0.1556756, 0.063347113,
-												0.05033445 ],
-										color : 'red',
+										name : 'runtime of la16.txt(10x10)',
+										data : [ 0.693, 0.693, 0.362, 0.158,
+												0.091, 0.038, 0.020 ],
+										color : 'rgb(51,187,238)',
+										dataLabels : {
+											align : 'center',
+											enabled : true,
+											style : {
+												"color" : 'rgb(51,187,238)',
+												"cursor" : "default",
+												"fontSize" : "12px",
+												"fontFamily" : "Time New Roman"
+											}
+										},
 										marker : {
 											enabled : true,
 											symbol : 'circle',
@@ -353,10 +371,20 @@ var chart = Highcharts.chart('container',{
 										yAxis : 1
 									},
 									{
-										name : 'ta42.txt(30x20)',
-										data : [ 74.38, 78.60, 79.53, 79.09,
+										name : 'scheduling score of ta42.txt(30x20)',
+										data : [ 76.18, 78.60, 80.14, 79.09,
 												78.63, 72.32, 72.32 ],
-										color : 'blue',
+										color : 'rgb(255,112,67)',
+										dataLabels : {
+											align : 'center',
+											enabled : true,
+											style : {
+												"color" : 'rgb(255,112,67)',
+												"cursor" : "default",
+												"fontSize" : "12px",
+												"fontFamily" : "Time New Roman"
+											}
+										},
 										marker : {
 											enabled : true,
 											symbol : 'square',
@@ -364,12 +392,20 @@ var chart = Highcharts.chart('container',{
 										}
 									},
 									{
-										name : 'ta42.txt(30x20) 时间',
-										data : [ 2.738332038, 1.424959975,
-												0.7623972, 0.357506063,
-												0.218158325, 0.105043363,
-												0.0824731 ],
-										color : 'red',
+										name : 'runtime of ta42.txt(30x20)',
+										data : [ 2.755, 1.425, 0.762, 0.358,
+												0.218, 0.105, 0.082 ],
+										color : 'rgb(51,187,238)',
+										dataLabels : {
+											align : 'center',
+											enabled : true,
+											style : {
+												"color" : 'rgb(51,187,238)',
+												"cursor" : "default",
+												"fontSize" : "12px",
+												"fontFamily" : "Time New Roman"
+											}
+										},
 										marker : {
 											enabled : true,
 											symbol : 'square',
@@ -379,10 +415,20 @@ var chart = Highcharts.chart('container',{
 										yAxis : 1
 									},
 									{
-										name : 'dmu76.txt(50x20)',
+										name : 'scheduling score of dmu76.txt(50x20)',
 										data : [ 66.86, 68.73, 70.22, 72.38,
 												70.77, 66.47, 61.92 ],
-										color : 'blue',
+										color : 'rgb(255,112,67)',
+										dataLabels : {
+											align : 'center',
+											enabled : true,
+											style : {
+												"color" : 'rgb(255,112,67)',
+												"cursor" : "default",
+												"fontSize" : "12px",
+												"fontFamily" : "Time New Roman"
+											}
+										},
 										marker : {
 											enabled : true,
 											symbol : 'triangle',
@@ -390,12 +436,20 @@ var chart = Highcharts.chart('container',{
 										}
 									},
 									{
-										name : 'dmu76.txt(50x20) 时间',
-										data : [ 4.197822275, 2.18917905,
-												1.206901413, 0.587193263,
-												0.398545013, 0.2356853,
-												0.189914925 ],
-										color : 'red',
+										name : 'runtime of dmu76.txt(50x20)',
+										data : [ 4.198, 2.189, 1.207, 0.587,
+												0.399, 0.236, 0.190 ],
+										color : 'rgb(51,187,238)',
+										dataLabels : {
+											align : 'center',
+											enabled : true,
+											style : {
+												"color" : 'rgb(51,187,238)',
+												"cursor" : "default",
+												"fontSize" : "12px",
+												"fontFamily" : "Time New Roman"
+											}
+										},
 										marker : {
 											enabled : true,
 											symbol : 'triangle',

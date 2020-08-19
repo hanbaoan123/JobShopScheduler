@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon"
+	href="https://jscdn.com.cn/highcharts/images/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* css 代码  */
+</style>
+<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/highcharts-more.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script
+	src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+</head>
+<body>
+	<div id="container"
+		style="height: 800px; margin: auto; min-width: 1000px; max-width: 1000px"></div>
+	<script>
+		var chart = Highcharts
+				.chart(
+						'container',
+						{
+							chart : {
+								type : 'boxplot'
+							},
+							title : {
+								text : 'Highcharts 箱线图'
+							},
+							credits : {
+								enabled : false
+							},
+							legend : {
+								enabled : true
+							},
+							xAxis : {
+								categories : [ '0.2', '0.4', '0.6' ],
+								title : {
+									text : ''
+								}
+							},
+							yAxis : {
+								title : {
+									text : '平均制造期'
+								}
+							},
+							tooltip : {
+								pointFormat : '<span style="color:{point.color}">\u25CF</span> <b> {series.name}</b><br/>'
+										+ // eslint-disable-line no-dupe-keys
+										'最大值: {point.high}<br/>'
+										+ 'Q2\t: {point.q3}<br/>'
+										+ '中位数: {point.median}<br/>'
+										+ 'Q1\t: {point.q1}<br/>'
+										+ '最小值: {point.low}<br/>'
+							},
+							series : [
+									{
+										name : 'DDDQNPR',
+										data : [ [ 55, 60, 62.5, 67.75, 81 ],
+												[ 55, 60, 62, 65, 80 ],
+												[ 55, 61.25, 64, 69, 76 ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										}
+									},
+									{
+										name : 'Best rule',
+										data : [ [ 55, 60, 62, 65, 88 ],
+												[ 55, 61, 62, 66.75, 82 ],
+												[ 55, 63, 66, 71, 85 ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										}
+									},
+									{
+										name : 'GA_PRIORITY_CODE',
+										data : [ [ 55, 59, 60, 61.75, 67 ],
+												[ 55, 60, 61, 63.75, 76 ],
+												[ 55, 63, 66, 70.75, 85 ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										}
+									},
+									{
+										name : 'GA_RULE_CODE',
+										data : [ [ 55, 59, 60, 62, 67 ],
+												[ 55, 60, 61, 63.75, 76 ],
+												[ 55, 63, 66, 70.75, 85 ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										}
+									} ]
+						});
+	</script>
+</body>
+</html>
