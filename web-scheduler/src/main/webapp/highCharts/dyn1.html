@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon"
+	href="https://jscdn.com.cn/highcharts/images/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* css 代码  */
+</style>
+<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/highcharts-more.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script
+	src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+</head>
+<body>
+	<div id="container"
+		style="height: 800px; width: 1000px; margin: auto; min-width: 1000px; max-width: 1000px"></div>
+	<script>
+		var chart = Highcharts
+				.chart(
+						'container',
+						{
+							chart : {
+								zoomType : 'xy'
+							},
+							credits : {
+								enabled : false
+							},
+							title : {
+								text : ''
+							},
+							exporting : {
+								sourceWidth : 1280,
+								sourceHeight : 720,
+								scale : 1
+							},
+							legend : {
+								enabled : true,
+								itemStyle : {
+									fontSize : '13px'
+								}
+							},
+							xAxis : {
+								categories : [ 'N1', 'N2', 'N3' ],
+								title : {
+									text : '',
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "16px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								labels : {
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "16px",
+										"fontFamily" : "Time New Roman"
+									}
+								}
+							},
+							yAxis : { // Primary yAxis
+								title : {
+									text : 'Average Cmax',
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "16px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								labels : {
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "16px",
+										"fontFamily" : "Time New Roman"
+									}
+								}
+							},
+							tooltip : {
+								shared : true
+							},
+							plotOptions : {
+								errorbar : {
+									stemWidth : 3
+								}
+							},
+							series : [
+									{
+										id : 'DDDQNPR',
+										name : 'DDDQNPR',
+										type : 'column',
+										color : 'rgb(60,178,239)',
+										data : [ 58.43643933, 61.06102675,
+												65.00228488 ],
+										tooltip : {
+											pointFormat : '<span style="font-weight: bold; color: {series.color}">{series.name}</span>: <b>{point.y:.1f} mm</b> '
+										}
+									},
+									{
+										name : '降雨误差1',
+										type : 'errorbar',
+										color : 'red',
+										data : [ [ 52.5931904, 68.16457466 ],
+												[ 52.02820442, 80.68414011 ],
+												[ 52.06665993, 81.48752533 ] ],
+										tooltip : {
+											pointFormat : '(误差范围: {point.low}-{point.high} mm)<br/>'
+										}
+									},
+									{
+										id : 'Best rule',
+										color : 'rgb(255,174,139)',
+										name : 'Best rule',
+										type : 'column',
+										data : [ 58.08821778, 59.84594197,
+												62.45971928 ],
+										tooltip : {
+											pointFormat : '<span style="font-weight: bold; color: {series.color}">{series.name}</span>: <b>{point.y:.1f} mm</b> '
+										}
+									},
+
+									{
+										name : '降雨误差',
+										color : 'red',
+										type : 'errorbar',
+										data : [ [ 51.80203751, 65.98235779 ],
+												[ 52.71704097, 73.78575586 ],
+												[ 51.30597355, 76.3689437 ] ],
+										tooltip : {
+											pointFormat : '(误差范围: {point.low}-{point.high} mm)<br/>'
+										}
+									} ]
+						});
+	</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon"
+	href="https://jscdn.com.cn/highcharts/images/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* css 代码  */
+</style>
+<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/highcharts-more.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script
+	src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+</head>
+<body>
+	<div id="container"
+		style="height: 800px; margin: auto; min-width: 1000px; max-width: 1000px"></div>
+	<script>
+		var chart = Highcharts
+				.chart(
+						'container',
+						{
+							chart : {
+								type : 'boxplot'
+							},
+							title : {
+								text : ''
+							},
+							credits : {
+								enabled : false
+							},
+							legend : {
+								enabled : false,
+								itemStyle : {
+									fontSize : '13px'
+								}
+							},
+							exporting : {
+								sourceWidth : 1280,
+								sourceHeight : 720,
+								scale : 1
+							},
+							xAxis : {
+								categories : [ 'DDDQNPR', 'GA_PRIORITY_CODE',
+										'GA_RULE_CODE', 'Best rule' ],
+								title : {
+									text : '',
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "16px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								labels : {
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "15px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								tickWidth : 1,
+								tickmarkPlacement : 'on'
+							},
+							yAxis : {
+								title : {
+									text : 'Average Cmax',
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "16px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								labels : {
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "16px",
+										"fontFamily" : "Time New Roman"
+									}
+								}
+							},
+							plotOptions : {
+								boxplot : {
+									lineWidth : 3,
+									medianWidth : 3,
+									stemWidth : 3,
+									whiskerWidth : 2
+								}
+							},
+							tooltip : {
+								pointFormat : '<span style="color:{point.color}">\u25CF</span> <b> {series.name}</b><br/>'
+										+ // eslint-disable-line no-dupe-keys
+										'最大值: {point.high}<br/>'
+										+ 'Q3\t: {point.q3}<br/>'
+										+ '中位数: {point.median}<br/>'
+										+ 'Q1\t: {point.q1}<br/>'
+										+ '最小值: {point.low}<br/>'
+							},
+							series : [
+									{
+										name : 'DDDQNPR',
+										data : [
+												[ 3988, 4143.5, 4210, 4266.5,
+														4438 ],
+												[ 3988, 4172, 4241.5, 4350.5,
+														4607 ],
+												[ 4044, 4190.5, 4274.5,
+														4394.75, 4701 ],
+												[ 4166, 4380.25, 4449, 4572,
+														4784 ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										}
+									},
+									{
+										name : 'outlier',
+										color : Highcharts.getOptions().colors[0],
+										type : 'scatter',
+										data : [ // x, y positions where 0 is the first category
+										[ 0, 4501 ], [ 3, 4881 ], [ 1, 4662 ],
+												[ 1, 4701 ] ],
+										marker : {
+											fillColor : 'white',
+											lineWidth : 1,
+											radius : 5,
+											lineColor : Highcharts.getOptions().colors[0]
+										},
+										tooltip : {
+											pointFormat : 'Observation: {point.y}'
+										}
+									} ]
+						});
+	</script>
+</body>
+</html>

@@ -28,23 +28,96 @@
 								type : 'boxplot'
 							},
 							title : {
-								text : 'Highcharts 箱线图'
+								text : ''
 							},
 							credits : {
 								enabled : false
 							},
 							legend : {
-								enabled : true
-							},
-							xAxis : {
-								categories : [ '0.2', '0.4', '0.6' ],
-								title : {
-									text : ''
+								enabled : true,
+								itemStyle : {
+									fontSize : '18px'
 								}
 							},
+							exporting : {
+								sourceWidth : 1280,
+								sourceHeight : 720,
+								scale : 1
+							},
+							xAxis : [ {
+								categories : [ '0.2', '0.4', '0.6' ],
+								title : {
+									text : 'Scheduled ratio',
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "18px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								labels : {
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "18px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								tickWidth : 1,
+								tickmarkPlacement : 'on'
+							}, {
+								lineWidth : 1,
+								opposite : true,
+								title : {
+									text : '',
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "18px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								labels : {
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "18px",
+										"fontFamily" : "Time New Roman"
+									},
+									enabled : false
+								},
+								tickWidth : 0,
+								//tickmarkPlacement : 'on',
+								showLastLabel : true,
+								tickInterval : 0.1,
+								min : 0,
+								max : 10
+							} ],
 							yAxis : {
 								title : {
-									text : '平均制造期'
+									text : 'Average Cmax',
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "18px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								labels : {
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "18px",
+										"fontFamily" : "Time New Roman"
+									}
+								}
+							},
+							plotOptions : {
+								boxplot : {
+									lineWidth : 3,
+									medianWidth : 3,
+									stemWidth : 3,
+									whiskerWidth : 2
 								}
 							},
 							tooltip : {
@@ -60,40 +133,27 @@
 									{
 										name : 'DDDQNPR',
 										data : [
-												[ 3495, 3590.5, 3629.5,
-														3680.75, 3929 ],
+												[ 3437, 3564.75, 3601, 3653.75,
+														3802 ],
 												[ 3492, 3570.75, 3620.5,
-														3653.75, 3848 ],
-												[ 3449, 3597.5, 3675.5, 3721.5,
-														3826
+														3664.25, 3773 ],
+												[ 3508, 3576.5, 3644, 3716.25,
+														3843 ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										}
+									},
 
-												] ],
-										tooltip : {
-											headerFormat : '<em>实验号码： {point.key}</em><br/>'
-										}
-									},
-									{
-										name : 'Best rule',
-										data : [
-												[ 3495, 3575.75, 3608, 3640.5,
-														3787 ],
-												[ 3459, 3567, 3619.5, 3657.5,
-														3748 ],
-												[ 3512, 3607.25, 3641, 3678.25,
-														3847 ] ],
-										tooltip : {
-											headerFormat : '<em>实验号码： {point.key}</em><br/>'
-										}
-									},
 									{
 										name : 'GA_PRIORITY_CODE',
 										data : [
+												[ 3528, 3605.25, 3647, 3689.75,
+														3812 ],
+
+												[ 3558, 3642, 3663.5, 3692.75,
+														3753 ],
 												[ 3567, 3679.5, 3709, 3734,
-														3774 ],
-												[ 3578, 3658.25, 3682.5, 3708,
-														3806 ],
-												[ 3514, 3615.5, 3650.5,
-														3689.75, 3765 ] ],
+														3774 ] ],
 										tooltip : {
 											headerFormat : '<em>实验号码： {point.key}</em><br/>'
 										}
@@ -101,13 +161,97 @@
 									{
 										name : 'GA_RULE_CODE',
 										data : [
-												[ 3631, 3678, 3714, 3733, 3777 ],
-												[ 3507, 3613.75, 3635, 3669,
-														3720 ],
-												[ 3530, 3603, 3643, 3677, 3753 ] ],
+												[ 3468, 3581.25, 3624.5, 3653,
+														3764 ],
+												[ 3493, 3593.75, 3631.5,
+														3651.75, 3707 ],
+												[ 3576, 3670.75, 3692.5, 3720,
+														3786 ] ],
 										tooltip : {
 											headerFormat : '<em>实验号码： {point.key}</em><br/>'
 										}
+									},
+									{
+										name : 'Best rule',
+										data : [
+												[ 3741, 3829, 3897.5, 3946.5,
+														4184 ],
+												[ 3668, 3841.25, 3901, 3976,
+														4149 ],
+												[ 3741, 3881, 3956.5, 4045.75,
+														4265 ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										}
+									},
+									{
+										name : 'DDDQNPR异常值',
+										type : 'scatter',
+										data : [ [ 0.93, 3819 ],
+												[ 4.26, 3779 ], [ 7.59, 3946 ],
+												[ 7.59, 4008 ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										},
+										xAxis : 1,
+										color : Highcharts.getOptions().colors[0],
+										showInLegend : false,
+										marker : {
+											enabled : true,
+											symbol : 'circle',
+											radius : 5
+										},
+									},
+									{
+										name : 'PRIORITY异常值',
+										type : 'scatter',
+										data : [ [ 1.43, null ],
+												[ 4.76, null ], [ 8.09, null ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										},
+										xAxis : 1,
+										showInLegend : false,
+										color : Highcharts.getOptions().colors[1],
+										marker : {
+											enabled : true,
+											symbol : 'circle',
+											radius : 5
+										},
+									},
+									{
+										name : 'RULE异常值',
+										type : 'scatter',
+										data : [ [ 1.93, null ],
+												[ 5.26, null ], [ 8.59, null ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										},
+										xAxis : 1,
+										color : Highcharts.getOptions().colors[2],
+										showInLegend : false,
+										marker : {
+											enabled : true,
+											symbol : 'circle',
+											radius : 5
+										},
+									},
+									{
+										name : 'BEST异常值',
+										type : 'scatter',
+										data : [ [ 2.43, null ],
+												[ 5.76, 4277 ], [ 9.09, null ] ],
+										tooltip : {
+											headerFormat : '<em>实验号码： {point.key}</em><br/>'
+										},
+										xAxis : 1,
+										color : Highcharts.getOptions().colors[3],
+										showInLegend : false,
+										marker : {
+											enabled : true,
+											symbol : 'circle',
+											radius : 5
+										},
 									} ]
 						});
 	</script>

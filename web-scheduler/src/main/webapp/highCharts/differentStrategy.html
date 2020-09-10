@@ -18,155 +18,162 @@
 <body>
 	<div id="container" style="min-width: 1000px; min-height: 900px"></div>
 	<script>
-		var chart = Highcharts.chart('container',
-				{
-					chart : {
-						type : 'line'
-						//width: 2360,
-						//height:1024
-					},
-					title : {
-						text : 'Curve of scheduling score between different strategies'
-					},
-					legend: {
-						layout: 'vertical',
-						align: 'right',
-						verticalAlign: 'top',
-						x: -30,
-						y: 50,
-						floating: true,
-						itemStyle: {
-							fontSize: '18px'
-						}
-					},
-					credits : {
-						enabled : false
-					},
-					subtitle : {
-					//text: '数据来源: WorldClimate.com'
-					},
-					exporting: {
-						sourceWidth: 1600,
-						sourceHeight: 900,
-						scale: 1
-					},
-					xAxis : {
-						type: 'category',
-						categories : [ 'ft06.txt(6x6)', 'ft10.txt(10x10)',
-								'ft20.txt(20x5)', 'abz5.txt(10x10)',
-								'abz7.txt(20x15)', 'swv01.txt(20x10)',
-								'swv06.txt(20x15)', 'swv11.txt(50x10)',
-								'swv16.txt(50x10)', 'orb01.txt(10x10)',
-								'orb02.txt(10x10)', 'yn01.txt(20x20)',
-								'yn02.txt(20x20)', 'la01.txt(10x5)',
-								'la02.txt(10x5)', 'la03.txt(10x5)',
-								'la04.txt(10x5)', 'la05.txt(10x5)',
-								'la06.txt(15x5)', 'la07.txt(15x5)',
-								'la08.txt(15x5)', 'la09.txt(15x5)',
-								'la10.txt(15x5)', 'la11.txt(20x5)',
-								'la12.txt(20x5)', 'la13.txt(20x5)',
-								'la14.txt(20x5)', 'la15.txt(20x5)',
-								'la16.txt(10x10)', 'la17.txt(10x10)',
-								'la18.txt(10x10)', 'la19.txt(10x10)',
-								'la20.txt(10x10)', 'la21.txt(15x10)',
-								'la22.txt(15x10)', 'la23.txt(15x10)',
-								'la24.txt(15x10)', 'la25.txt(15x10)',
-								'la26.txt(20x10)', 'la27.txt(20x10)',
-								'la28.txt(20x10)', 'la29.txt(20x10)',
-								'la30.txt(20x10)', 'la31.txt(30x10)',
-								'la32.txt(30x10)', 'la33.txt(30x10)',
-								'la34.txt(30x10)', 'la35.txt(30x10)',
-								'la36.txt(15x15)', 'la37.txt(15x15)',
-								'la38.txt(15x15)', 'la39.txt(15x15)',
-								'la40.txt(15x15)', 'dmu01.txt(20x15)',
-								'dmu06.txt(20x20)', 'dmu11.txt(30x15)',
-								'dmu16.txt(30x20)', 'dmu21.txt(40x15)',
-								'dmu26.txt(40x20)', 'dmu31.txt(50x15)',
-								'dmu36.txt(50x20)', 'dmu41.txt(20x15)',
-								'dmu46.txt(20x20)', 'dmu51.txt(30x15)',
-								'dmu56.txt(30x20)', 'dmu61.txt(40x15)',
-								'dmu66.txt(40x20)', 'dmu71.txt(50x15)',
-								'dmu76.txt(50x20)', 'ta01.txt(15x15)',
-								'ta02.txt(15x15)', 'ta11.txt(20x15)',
-								'ta12.txt(20x15)', 'ta21.txt(20x20)',
-								'ta22.txt(20x20)', 'ta31.txt(30x15)',
-								'ta32.txt(30x15)', 'ta41.txt(30x20)',
-								'ta42.txt(30x20)', 'ta51.txt(50x15)',
-								'ta52.txt(50x15)', 'ta61.txt(50x20)',
-								'ta62.txt(50x20)', 'ta71.txt(100x20)',
-								'ta72.txt(100x20)' ],
-						title : {
-							text : 'Instances',
-							style : {
-								"color" : 'black',
-								"cursor" : "default",
-								"fontSize" : "16px",
-								"fontFamily" : "Time New Roman"
-							}
-						},
-						labels : {
-							rotation: -90,
-							style : {
-								"color" : 'black',
-								"cursor" : "default",
-								"fontSize" : "15px",
-								"fontFamily" : "Time New Roman"
-							}
-						},
-						tickWidth: 1,
-						tickmarkPlacement: 'on'
-					},
-					yAxis : {
-						title : {
-							text : 'Scheduling score (%)',
-							style : {
-								"color" : 'black',
-								"cursor" : "default",
-								"fontSize" : "16px",
-								"fontFamily" : "Time New Roman"
-							}
-						},
-						labels : {
-							style : {
-								"color" : 'black',
-								"cursor" : "default",
-								"fontSize" : "16px",
-								"fontFamily" : "Time New Roman"
-							}
-						}
-					},
-					plotOptions : {
-						series: {
-							dataLabels: {
-								align: 'left',
-								enabled: true
+		var chart = Highcharts
+				.chart(
+						'container',
+						{
+							chart : {
+								type : 'line'
+							//width: 2360,
+							//height:1024
 							},
-							lineWidth: 1
-						}
-					},
-					series : [
-							{
-								name : 'ε-decreasing strategy',
-								data : [ 100.00, 89.94, 94.26, 92.43, 81.80,
-										80.31, 76.63, 73.75, 98.29, 86.45,
-										92.69, 77.48, 74.68, 100.00, 89.97,
-										90.45, 89.53, 100.00, 100.00, 94.88,
-										95.89, 99.89, 99.79, 98.55, 96.83,
-										95.28, 100.00, 93.93, 92.02, 95.96,
-										97.14, 89.57, 92.80, 78.47, 85.99,
-										97.27, 85.70, 89.06, 83.88, 80.82,
-										82.05, 81.41, 88.79, 90.37, 92.09,
-										88.29, 85.11, 91.83, 87.93, 81.17,
-										86.17, 87.01, 84.45, 71.81, 74.38,
-										71.76, 81.44, 73.09, 78.14, 80.09,
-										76.98, 68.00, 68.66, 67.78, 70.07,
-										64.49, 65.07, 69.19, 70.77, 85.19,
-										82.55, 80.44, 74.95, 76.98, 75.16,
-										80.00, 74.98, 68.07, 73.94, 81.75,
-										83.16, 79.25, 75.34, 91.34, 86.64 ],
-										dataLabels: {
-											align: 'center',
-											enabled: true,
+							title : {
+								text : 'Curve of scheduling score between different strategies'
+							},
+							legend : {
+								layout : 'vertical',
+								align : 'right',
+								verticalAlign : 'top',
+								x : -30,
+								y : 50,
+								floating : true,
+								itemStyle : {
+									fontSize : '18px'
+								}
+							},
+							credits : {
+								enabled : false
+							},
+							subtitle : {
+							//text: '数据来源: WorldClimate.com'
+							},
+							exporting : {
+								sourceWidth : 1600,
+								sourceHeight : 900,
+								scale : 1
+							},
+							xAxis : {
+								type : 'category',
+								categories : [ 'ft06.txt(6x6)',
+										'ft10.txt(10x10)', 'ft20.txt(20x5)',
+										'abz5.txt(10x10)', 'abz7.txt(20x15)',
+										'swv01.txt(20x10)', 'swv06.txt(20x15)',
+										'swv11.txt(50x10)', 'swv16.txt(50x10)',
+										'orb01.txt(10x10)', 'orb02.txt(10x10)',
+										'yn01.txt(20x20)', 'yn02.txt(20x20)',
+										'la01.txt(10x5)', 'la02.txt(10x5)',
+										'la03.txt(10x5)', 'la04.txt(10x5)',
+										'la05.txt(10x5)', 'la06.txt(15x5)',
+										'la07.txt(15x5)', 'la08.txt(15x5)',
+										'la09.txt(15x5)', 'la10.txt(15x5)',
+										'la11.txt(20x5)', 'la12.txt(20x5)',
+										'la13.txt(20x5)', 'la14.txt(20x5)',
+										'la15.txt(20x5)', 'la16.txt(10x10)',
+										'la17.txt(10x10)', 'la18.txt(10x10)',
+										'la19.txt(10x10)', 'la20.txt(10x10)',
+										'la21.txt(15x10)', 'la22.txt(15x10)',
+										'la23.txt(15x10)', 'la24.txt(15x10)',
+										'la25.txt(15x10)', 'la26.txt(20x10)',
+										'la27.txt(20x10)', 'la28.txt(20x10)',
+										'la29.txt(20x10)', 'la30.txt(20x10)',
+										'la31.txt(30x10)', 'la32.txt(30x10)',
+										'la33.txt(30x10)', 'la34.txt(30x10)',
+										'la35.txt(30x10)', 'la36.txt(15x15)',
+										'la37.txt(15x15)', 'la38.txt(15x15)',
+										'la39.txt(15x15)', 'la40.txt(15x15)',
+										'dmu01.txt(20x15)', 'dmu06.txt(20x20)',
+										'dmu11.txt(30x15)', 'dmu16.txt(30x20)',
+										'dmu21.txt(40x15)', 'dmu26.txt(40x20)',
+										'dmu31.txt(50x15)', 'dmu36.txt(50x20)',
+										'dmu41.txt(20x15)', 'dmu46.txt(20x20)',
+										'dmu51.txt(30x15)', 'dmu56.txt(30x20)',
+										'dmu61.txt(40x15)', 'dmu66.txt(40x20)',
+										'dmu71.txt(50x15)', 'dmu76.txt(50x20)',
+										'ta01.txt(15x15)', 'ta02.txt(15x15)',
+										'ta11.txt(20x15)', 'ta12.txt(20x15)',
+										'ta21.txt(20x20)', 'ta22.txt(20x20)',
+										'ta31.txt(30x15)', 'ta32.txt(30x15)',
+										'ta41.txt(30x20)', 'ta42.txt(30x20)',
+										'ta51.txt(50x15)', 'ta52.txt(50x15)',
+										'ta61.txt(50x20)', 'ta62.txt(50x20)',
+										'ta71.txt(100x20)', 'ta72.txt(100x20)' ],
+								title : {
+									text : 'Instances',
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "16px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								labels : {
+									rotation : -90,
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "15px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								tickWidth : 1,
+								tickmarkPlacement : 'on'
+							},
+							yAxis : {
+								title : {
+									text : 'Scheduling score (%)',
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "16px",
+										"fontFamily" : "Time New Roman"
+									}
+								},
+								labels : {
+									style : {
+										"color" : 'black',
+										"cursor" : "default",
+										"fontSize" : "16px",
+										"fontFamily" : "Time New Roman"
+									}
+								}
+							},
+							plotOptions : {
+								series : {
+									dataLabels : {
+										align : 'left',
+										enabled : true
+									},
+									lineWidth : 1
+								}
+							},
+							series : [
+									{
+										name : 'ε-decreasing strategy',
+										data : [ 100.00, 89.94, 94.26, 92.43,
+												81.80, 80.31, 76.63, 80.91,
+												98.29, 89.37, 92.69, 81.10,
+												79.23, 100.00, 92.51, 91.85,
+												89.53, 100.00, 100.00, 94.88,
+												95.89, 99.89, 99.79, 98.55,
+												96.83, 95.28, 100.00, 93.93,
+												92.02, 95.96, 97.14, 89.57,
+												92.80, 86.23, 85.99, 97.27,
+												85.70, 89.06, 83.88, 80.82,
+												82.05, 81.41, 88.79, 90.37,
+												92.09, 88.29, 85.11, 91.83,
+												87.93, 81.17, 86.17, 87.01,
+												84.45, 77.29, 88.02, 81.51,
+												81.44, 79.46, 78.14, 80.09,
+												76.98, 71.22, 68.66, 72.75,
+												70.07, 70.71, 75.99, 69.19,
+												70.77, 85.19, 86.87, 85.51,
+												80.98, 80.77, 78.96, 83.80,
+												74.98, 70.59, 73.94, 81.75,
+												83.16, 81.13, 75.34, 91.34,
+												86.64 ],
+										dataLabels : {
+											align : 'center',
+											enabled : true,
 											style : {
 												"color" : 'black',
 												"cursor" : "default",
@@ -174,41 +181,46 @@
 												"fontFamily" : "Time New Roman"
 											}
 										},
-										marker: {
-											enabled: true,
-											radius: 5
+										marker : {
+											enabled : true,
+											radius : 5
 										}
-							},
-							{
-								name : 'ε-decreasing strategy with elitist',
-								data : [ 100.00, 91.63, 96.44, 94.27, 86.43,
-										83.16, 81.22, 80.34, 100.00, 88.77,
-										96.10, 85.99, 82.54, 100.00, 93.04,
-										93.14, 92.62, 100.00, 100.00, 100.00,
-										100.00, 100.00, 100.00, 100.00, 99.24,
-										99.91, 100.00, 98.85, 96.43, 96.91,
-										98.72, 95.79, 97.62, 90.02, 90.79,
-										98.01, 90.86, 91.57, 91.79, 88.40,
-										87.73, 87.07, 95.62, 96.22, 97.37,
-										96.46, 91.54, 97.27, 93.58, 90.71,
-										88.72, 90.86, 91.47, 81.87, 78.18,
-										80.47, 84.59, 83.35, 81.60, 85.61,
-										81.95, 74.76, 72.34, 73.74, 71.88,
-										71.80, 70.14, 72.09, 72.38, 88.95,
-										88.48, 85.29, 83.81, 83.31, 83.48,
-										80.81, 80.60, 74.75, 77.24, 84.58,
-										85.35, 83.62, 82.23, 92.48, 90.17 ],
-										dataLabels: {
-											align: 'center',
-											enabled: false
+									},
+									{
+										name : 'ε-decreasing strategy with elitist',
+										data : [ 100.00, 94.90, 96.44, 94.27,
+												90.48, 87.07, 82.41, 88.65,
+												100.00, 98.06, 96.10, 88.76,
+												88.78, 100.00, 100.00, 100.00,
+												96.88, 100.00, 100.00, 100.00,
+												100.00, 100.00, 100.00, 100.00,
+												99.24, 99.91, 100.00, 98.85,
+												96.43, 98.12, 98.72, 96.56,
+												97.62, 90.02, 90.79, 98.01,
+												90.86, 91.57, 91.79, 88.40,
+												87.73, 87.07, 95.62, 96.22,
+												97.37, 96.46, 91.54, 97.27,
+												93.58, 90.71, 88.72, 90.86,
+												91.47, 83.98, 91.79, 86.21,
+												84.59, 83.35, 81.60, 85.61,
+												81.95, 80.10, 75.39, 78.22,
+												77.28, 77.25, 82.49, 76.85,
+												76.39, 93.61, 93.11, 89.51,
+												86.19, 84.12, 83.48, 88.82,
+												83.09, 77.80, 80.14, 84.58,
+												85.35, 85.18, 82.23, 92.48,
+												90.17 ],
+										dataLabels : {
+											align : 'center',
+											enabled : false
 										},
-										color: 'orange',
-										marker: {
-											enabled: true,
-											radius: 5
+										color : 'orange',
+										marker : {
+											enabled : true,
+											radius : 5
 										}
-							} ]
-				});
+									} ]
+						});
 	</script>
 </body>
 </html>
