@@ -42,13 +42,13 @@
 							},
 							legend : {
 								enabled : true,
+								itemDistance: 50,
 								itemStyle : {
 									fontSize : '13px'
 								}
 							},
 							xAxis : {
-								categories : [ 'ft06(6x6)', 'la16(10x10)',
-										'dmu06(20x20)', 'ta61(50x20)' ],
+								categories : [ 'N1', 'N2', 'N3' ],
 								title : {
 									text : '',
 									style : {
@@ -85,25 +85,6 @@
 										"fontFamily" : "Time New Roman"
 									}
 								}
-							}, {
-								opposite : true,
-								title : {
-									text : 'Average Cmax',
-									style : {
-										"color" : 'black',
-										"cursor" : "default",
-										"fontSize" : "16px",
-										"fontFamily" : "Time New Roman"
-									}
-								},
-								labels : {
-									style : {
-										"color" : 'black',
-										"cursor" : "default",
-										"fontSize" : "16px",
-										"fontFamily" : "Time New Roman"
-									}
-								}
 							} ],
 							tooltip : {
 								shared : true
@@ -119,8 +100,8 @@
 										name : 'DDDQNPR',
 										type : 'column',
 										//color : 'rgb(60,178,239)',
-										data : [ 58.62837952, 991.8025036,
-												3620.357315, 3433.220732 ],
+										data : [ 3333.220732, 3328.633333,
+												3373.05359 ],
 										tooltip : {
 											pointFormat : '<span style="font-weight: bold; color: {series.color}">{series.name}</span>: <b>{point.y:.1f} mm</b> '
 										}
@@ -129,10 +110,9 @@
 										name : 'DDDQNPR误差',
 										type : 'errorbar',
 										color : 'red',
-										data : [ [ 51.6826337, 65.82774349 ],
-												[ 974.7342645, 1063.455419 ],
-												[ 3607.003643, 3661.362433 ],
-												[ 3330.891211, 3586.817072 ] ],
+										data : [ [ 3230.891211, 3486.817072 ],
+												[ 3128.698263, 3550.162818 ],
+												[ 3074.452855, 3577.110567 ] ],
 										tooltip : {
 											pointFormat : '(误差范围: {point.low}-{point.high} mm)<br/>'
 										}
@@ -142,8 +122,8 @@
 										//color : 'rgb(255,174,139)',
 										name : 'GA_PRIORITY_CODE',
 										type : 'column',
-										data : [ 56.64336324, 999.1939543,
-												4189.931363 ],
+										data : [ 3687.235492, 3789.931363,
+												3819.561235 ],
 										tooltip : {
 											pointFormat : '<span style="font-weight: bold; color: {series.color}">{series.name}</span>: <b>{point.y:.1f} mm</b> '
 										}
@@ -153,9 +133,9 @@
 										name : 'GA_PRIORITY_CODE误差',
 										color : 'red',
 										type : 'errorbar',
-										data : [ [ 51.40113026, 63.0135897 ],
-												[ 974.2285135, 1032.08059 ],
-												[ 3959.125386, 4346.936769 ] ],
+										data : [ [ 3593.698246, 3795.736717 ],
+												[ 3541.825497, 3940.191323 ],
+												[ 3527.583498, 3994.725754 ] ],
 										tooltip : {
 											pointFormat : '(误差范围: {point.low}-{point.high} mm)<br/>'
 										}
@@ -165,8 +145,8 @@
 										//color : 'rgb(255,174,139)',
 										name : 'GA_RULE_CODE',
 										type : 'column',
-										data : [ 58.08821778, 59.84594197,
-												62.45971928 ],
+										data : [ 3690.773166, 3758.344769,
+												3940.191323 ],
 										tooltip : {
 											pointFormat : '<span style="font-weight: bold; color: {series.color}">{series.name}</span>: <b>{point.y:.1f} mm</b> '
 										}
@@ -176,9 +156,9 @@
 										name : 'GA_RULE_CODE误差',
 										color : 'red',
 										type : 'errorbar',
-										data : [ [ 51.80203751, 65.98235779 ],
-												[ 52.71704097, 73.78575586 ],
-												[ 51.30597355, 76.3689437 ] ],
+										data : [ [ 3624.517231, 3895.736717 ],
+												[ 3580.095445, 3940.191323 ],
+												[ 3524.857318, 4151.312121 ] ],
 										tooltip : {
 											pointFormat : '(误差范围: {point.low}-{point.high} mm)<br/>'
 										}
@@ -188,8 +168,8 @@
 										//color : 'rgb(255,174,139)',
 										name : 'Best rule',
 										type : 'column',
-										data : [ 58.08821778, 1037.567133,
-												4311.347435, 3533.248283 ],
+										data : [ 4514.528952, 4509.33128,
+												4518.553036 ],
 										tooltip : {
 											pointFormat : '<span style="font-weight: bold; color: {series.color}">{series.name}</span>: <b>{point.y:.1f} mm</b> '
 										}
@@ -199,10 +179,9 @@
 										name : 'Best rule误差',
 										color : 'red',
 										type : 'errorbar',
-										data : [ [ 51.80203751, 65.98235779 ],
-												[ 1027.323158, 1048.718252 ],
-												[ 4122.533995, 4341.094779 ],
-												[ 3493.698246, 3585.020569 ] ],
+										data : [ [ 4250.306726, 4787.166898 ],
+												[ 4224.135938, 4812.584939 ],
+												[ 3986.370668, 4911.974998 ] ],
 										tooltip : {
 											pointFormat : '(误差范围: {point.low}-{point.high} mm)<br/>'
 										}
