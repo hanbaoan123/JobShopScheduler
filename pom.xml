@@ -16,7 +16,7 @@
 		<encoding.version>UTF-8</encoding.version>
 		<spring.version>4.0.0.RELEASE</spring.version>
 		<spring-fox.version>2.2.2</spring-fox.version>
-		<jackson.version> 2.10.1</jackson.version>
+		<jackson.version>2.12.1</jackson.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
