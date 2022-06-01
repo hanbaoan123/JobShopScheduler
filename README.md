@@ -8,7 +8,7 @@
 
 &emsp;&emsp;本手册将给出完整的关于调度平台的使用说明。
 
-&emsp;&emsp;**注：本调度平台所使用到的所有安装程序和文件均可在[这里]([https://pan.baidu.com/s/1IFEVoFPbcUszYEfOZtpICw](https://pan.baidu.com/s/1OJ1KAOXlNwhqeJWwJ2didA?pwd=nb31))找到，密码为nb31。**
+&emsp;&emsp;**注：本调度平台所使用到的所有安装程序和文件均可在[这里]([https://pan.baidu.com/s/1OJ1KAOXlNwhqeJWwJ2didA?pwd=nb31]())找到，密码为nb31。**
 
 ## 安装
 
