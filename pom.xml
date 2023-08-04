@@ -14,7 +14,7 @@
 		<target.version>1.8</target.version>
 		<compiler.version>1.8</compiler.version>
 		<encoding.version>UTF-8</encoding.version>
-		<spring.version>4.0.0.RELEASE</spring.version>
+		<spring.version>4.3.30.RELEASE</spring.version>
 		<spring-fox.version>2.2.2</spring-fox.version>
 		<jackson.version> 2.10.1</jackson.version>
 	</properties>
